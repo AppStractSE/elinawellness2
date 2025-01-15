@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: 27 27 27;
+  --secondary-color: 53 53 53;
+  --background-color: 253 250 239;
+  --foreground-color: 23 23 23;
+  --accent-color: 234 111 11;
+  --max-page-width: 1536px;
+  --border-radius-button: 4px;
+  --border-radius-general: 0.5rem;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.max-page-width {
+  max-width: var(--max-page-width);
+  @apply mx-auto;
+}
