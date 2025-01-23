@@ -1,5 +1,5 @@
 "use client";
-import { content } from "@/data/content";
+import { smoochSans } from "@/util/fonts";
 import { MenuIcon } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
@@ -9,24 +9,26 @@ import Drawer from "../drawer/Drawer";
 const Header = () => {
   const ICON_SIZE = 24;
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  const buttonBaseClasses = "px-3 py-2 text-xs uppercase font-semibold";
+  const buttonBaseClasses = "px-3 py-2 text-xs  font-semibold";
   return (
     <>
-      <header className="sticky top-0 z-50 bg-primary/90 text-background backdrop-blur-md">
-        <div className="max-page-width p-4">
+      <header className="sticky top-0 z-50 bg-background/80 text-primary backdrop-blur-md">
+        <div className="max-page-width px-4 py-1 md:py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <button onClick={() => setIsDrawerOpen(!isDrawerOpen)}>
                 <MenuIcon size={ICON_SIZE} />
               </button>
-              <div className="h-6 min-w-[1.5px] bg-background/50" />
+              <div className="h-6 min-w-[1.5px] bg-primary/50" />
               <Link
                 href="/"
                 className={twMerge(
-                  "font-bold uppercase tracking-wider md:text-xl",
+                  "-space-y-3 text-right uppercase antialiased",
+                  smoochSans.className,
                 )}
               >
-                {content.company.name}
+                <p className="text-3xl">Elina</p>
+                <p className="text-base">Wellness</p>
               </Link>
             </div>
             <div className="flex items-center gap-4">

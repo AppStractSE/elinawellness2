@@ -10,7 +10,7 @@ const Footer = () => {
       <div className="max-page-width space-y-8 px-4 pb-8 pt-12">
         <div className="flex flex-wrap justify-between gap-12">
           <div className="flex flex-1 flex-col gap-4">
-            <h3 className="text-balance text-2xl font-bold uppercase">
+            <h3 className="text-balance text-2xl font-bold">
               WE GOT something cooking. Reach out to us!
             </h3>
           </div>
@@ -72,13 +72,13 @@ const Footer = () => {
           ))}
         </div>
         <div className="mt-4 flex flex-col justify-between gap-4 md:flex-row md:items-center">
-          <p className="text-xs font-semibold uppercase text-background/50">
+          <p className="text-xs font-semibold text-background/50">
             © {currentYear} {content.company.name}. All rights reserved.
           </p>
           <a
             href="https://www.appstract.se"
             target="_blank"
-            className="text-xs font-semibold uppercase text-background/50 hover:underline"
+            className="text-xs font-semibold text-background/50 hover:underline"
           >
             Web design by Appstract
           </a>

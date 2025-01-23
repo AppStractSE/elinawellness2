@@ -27,7 +27,7 @@ const MainLinks = ({ currentPath }: MainLinksProps) => {
           sublinkHref === currentPath;
 
         const baseClassNames =
-          "uppercase block transition-all duration-100 ease-in-out flex items-center hover:text-secondary hover:underline hover:text-primary/50 hover:underline-offset-4";
+          " block transition-all duration-100 ease-in-out flex items-center hover:text-secondary hover:underline hover:text-primary/50 hover:underline-offset-4";
 
         const {
           isActiveClassNames: mainActiveClass,
@@ -130,7 +130,7 @@ const Drawer = ({ isOpen, setIsOpen }: Props) => {
           <div className="flex items-center justify-between">
             <Link
               href="/"
-              className={twMerge("text-2xl font-bold uppercase tracking-wider")}
+              className={twMerge("text-2xl font-bold tracking-wider")}
             >
               {content.company.name}
             </Link>
@@ -144,7 +144,7 @@ const Drawer = ({ isOpen, setIsOpen }: Props) => {
           <MainLinks currentPath={pathname} />
           <hr className="border-primary/25" />
           <div className="flex flex-col gap-4">
-            <h6 className="text-base font-bold uppercase tracking-wide text-black">
+            <h6 className="text-base font-bold tracking-wide text-black">
               {content.followUs}
             </h6>
             <div className="flex flex-col gap-4">

@@ -1,35 +1,26 @@
 import { content } from "@/data/content";
-import Link from "next/link";
 
 const HeroSection = () => {
   return (
-    <section>
-      <div className="relative mb-4 flex min-h-screen items-center justify-center">
-        <video
-          autoPlay
-          src="https://videos.pexels.com/video-files/4488715/4488715-uhd_2732_1440_25fps.mp4"
-          muted
-          playsInline
-          loop
-          id="myVideo"
-          className="absolute inset-0 h-full w-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="relative">
-          <div className="flex flex-col items-center justify-center gap-12 px-4 py-24">
-            <h1 className="whitespace-pre-line text-balance text-center text-4xl uppercase text-background sm:text-6xl md:text-7xl lg:text-8xl">
-              {content.homePage.title}
-            </h1>
-            <h2 className="text-center text-xl text-background md:text-2xl lg:text-3xl">
-              {content.homePage.description}
-            </h2>
-            <Link
-              href="/"
-              className="mt-12 flex w-fit items-center justify-center rounded-full bg-accent/90 px-6 py-2.5 text-base text-background hover:bg-accent md:text-lg lg:text-xl"
-            >
-              <span>{content.homePage.button}</span>
-            </Link>
-          </div>
+    <section
+      className="bg-cover bg-no-repeat"
+      style={{
+        backgroundImage: "url(/IMG_6980.JPG)",
+        backgroundPosition: "50% 25%",
+      }}
+    >
+      <div className="relative flex min-h-[80vh] flex-col justify-center overflow-hidden border-b border-primary/50 md:justify-end">
+        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="max-page-width relative z-10 flex w-full flex-col gap-4 px-4 py-24 lg:gap-8">
+          <h1 className="w-1/2 whitespace-pre-line text-balance text-3xl font-medium text-background sm:text-4xl md:text-5xl lg:text-6xl">
+            {content.homePage.title}
+          </h1>
+          <h2 className="hidden text-xl font-medium text-background md:block md:w-1/2 md:text-2xl lg:text-3xl">
+            {content.homePage.subtitle}
+          </h2>
+          <h2 className="whitespace-pre-line text-balance text-lg text-background md:w-1/2 md:text-2xl lg:text-xl">
+            {`Upplev hälsa och välbefinnande med oss - anpassat för dig. Få personlig vägledning och smakrika recept för dina hälsomål, oavsett din träningsnivå.`}
+          </h2>
         </div>
       </div>
     </section>

@@ -7,7 +7,7 @@
   --secondary-color: 53 53 53;
   --background-color: 253 250 239;
   --foreground-color: 23 23 23;
-  --accent-color: 234 111 11;
+  --accent-color: 46 184 0;
   --max-page-width: 1536px;
   --border-radius-button: 4px;
   --border-radius-general: 0.5rem;
@@ -15,9 +15,49 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 .max-page-width {
   max-width: var(--max-page-width);
   @apply mx-auto;
+}
+
+
+.splide__wrapper {
+  @apply flex flex-col gap-12 #{!important};
+}
+
+.splide__pagination {
+  @apply relative bottom-0 p-0 #{!important};
+}
+
+.splide__pagination__page {
+  @apply opacity-50 transition-all duration-200 ease-in-out rounded-sm w-4 h-4 bg-primary #{!important};
+}
+
+.splide__pagination__page.is-active {
+  @apply opacity-100 w-6 h-4 scale-100 #{!important};
+}
+
+.splide-slide-content {
+  @apply max-w-screen-md mx-auto;
+}
+
+.splide__pagination {
+  @apply gap-1 flex #{!important};
+}
+
+.splide__pagination li {
+  @apply flex h-auto #{!important};
+}
+
+.splide__arrow svg {
+  fill: transparent !important;
+  height: auto !important;
+  width: auto !important;
 }

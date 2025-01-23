@@ -1,12 +1,12 @@
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
 import InitializeTheme from "@/components/InitializeTheme";
-import { Montserrat } from "next/font/google";
+import { Quicksand } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 import "./globals.scss";
 
-const montserrat = Montserrat({
-  variable: "--font-montserrat",
+const quicksand = Quicksand({
+  variable: "--font-quicksand",
   subsets: ["latin"],
 });
 
@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="sv">
       <body
-        className={`${montserrat.className} bg-background text-primary antialiased`}
+        className={`${quicksand.className} bg-background text-primary antialiased`}
       >
         <InitializeTheme />
         <Toaster />

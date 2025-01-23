@@ -253,7 +253,7 @@ const ContactForm = () => {
         <button
           disabled={isSubmitting || formSubmitted}
           type="submit"
-          className="flex w-full items-center justify-center rounded-md bg-primary p-4 text-center text-base uppercase leading-normal tracking-[0.15em] text-background outline outline-1 transition-all duration-200 ease-in-out hover:bg-accent"
+          className="flex w-full items-center justify-center rounded-md bg-primary p-4 text-center text-base leading-normal tracking-[0.15em] text-background outline outline-1 transition-all duration-200 ease-in-out hover:bg-accent"
         >
           {isSubmitting ? (
             <Spinner
