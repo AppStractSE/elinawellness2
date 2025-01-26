@@ -1,7 +1,7 @@
-import ApplicationForm from "@/components/forms/ApplicationForm";
 import CenteredSection from "@/components/sections/CenteredSection";
 import ContactSection from "@/components/sections/ContactSection";
 import HeroSection from "@/components/sections/HeroSection";
+import MiniContactFormSection from "@/components/sections/MiniContactFormSection";
 import TitleWithContentSection from "@/components/sections/TitleWithContentSection";
 import TwoPaneSection from "@/components/sections/TwoPaneSection";
 import Services from "@/components/services/Services";
@@ -16,22 +16,14 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <section>
-        <div className="max-page-width md:px-4">
-          <div className="relative z-10 -mt-24 w-full rounded-md bg-background p-4 sm:-mt-16 sm:w-fit lg:-mt-8">
-            <div className="mb-4">
-              Kom igång idag genom att fylla i formuläret nedan!
-            </div>
-            <ApplicationForm />
-          </div>
-        </div>
-      </section>
+      <MiniContactFormSection />
       <TwoPaneSection
+        rtl
         button={{
           href: "/kontakt",
           text: "Kom igång!",
         }}
-        className="bg-background"
+        className="bg-background [&>*:first-child]:lg:pt-0"
         images={["/food001.jpg", "/IMG_6818.JPG", "/IMG_3526.jpg", "/118.JPG"]}
         title="Vår filosofi"
         text={`Vi anpassar alla våra basprogram för att passa just dig, din kropp och din livsstil. Vi strävar alltid efter att erbjuda personlig vägledning för att optimera din resa mot en hälsosammare livsstil.\n\nVi tror på en holistisk approach där mat, träning och vila samverkar för att främja välbefinnande. Oavsett om du är nybörjare eller har en etablerad träningsrutin anpassar vi träningen efter dig och din situation. \n\nVi erbjuder flexibla träningsalternativ, antingen på gym, hemma eller på  andra platser. Oavsett om du föredrar kroppsviktsträning hemma eller mer avancerad träningsplanering på gymmet, så skapar vi en plan som passar just dig och ditt liv.`}
