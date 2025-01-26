@@ -118,14 +118,16 @@ export const content = {
       id: "seo",
       title: "Kostrådgivarsamtal",
       description:
-        "We optimize websites for search engines to help you rank higher and get more traffic.",
-      image: "/113.JPG",
+        "Ett fokuserat samtal för att ge dig konkreta råd och strategier för din kost och hälsa.",
+      image: "/image005.webp",
       points: [
+        { title: "Personligt rådgivarsamtal (1 timme)." },
+        { title: "Sammanfattning och handlingsplan via mejl." },
+        { title: "Praktiska tips för att nå dina mål." },
+        { title: "Rekommendationer baserade på dina preferenser." },
         {
-          title: "En timmes samtal för personlig rådgivning",
-        },
-        {
-          title: "Sammanfattning via mejl",
+          title:
+            "Möjlighet till uppföljande samtal för att justera planen efter dina framsteg.",
         },
       ],
     },

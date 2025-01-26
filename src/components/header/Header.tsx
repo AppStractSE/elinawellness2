@@ -1,6 +1,7 @@
 "use client";
 import { smoochSans } from "@/util/fonts";
 import { MenuIcon } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { twMerge } from "tailwind-merge";
@@ -20,15 +21,8 @@ const Header = () => {
                 <MenuIcon size={ICON_SIZE} />
               </button>
               <div className="h-6 min-w-[1.5px] bg-primary/50" />
-              <Link
-                href="/"
-                className={twMerge(
-                  "-space-y-3 text-right uppercase antialiased",
-                  smoochSans.className,
-                )}
-              >
-                <p className="text-3xl">Elina</p>
-                <p className="text-base">Wellness</p>
+              <Link href="/" className="">
+                <Image width={54} height={54} quality={100} alt="Logo" src="/logo.svg" />
               </Link>
             </div>
             <div className="flex items-center gap-4">

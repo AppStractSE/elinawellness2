@@ -5,9 +5,12 @@ import "@splidejs/react-splide/css";
 import { ArrowRight, Check, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { twMerge } from "tailwind-merge";
+import Accordion from "../ui/accordion/Accordion";
 
 const FullwidthCarousel = () => {
+  const [accordionOpen, setAccordionOpen] = useState(false);
   const rtl = false;
   const options = {
     type: "loop",
@@ -58,18 +61,23 @@ const FullwidthCarousel = () => {
                       <h5 className="text-xl font-medium">
                         {service.description}
                       </h5>
-                      <ul className="mt-4 space-y-2">
-                        <li className="text-lg font-medium">Vad ingår?</li>
-                        {service.points.map((point, index) => (
-                          <li key={index} className="flex gap-2">
-                            <Check
-                              className="my-auto min-h-[20px] min-w-[20px]"
-                              size={20}
-                            />
-                            <span className="md:text-lg">{point.title}</span>
-                          </li>
-                        ))}
-                      </ul>
+                      <Accordion
+                        title="Vad ingår?"
+                        isOpen={accordionOpen}
+                        setIsOpen={() => setAccordionOpen(!accordionOpen)}
+                      >
+                        <ul className="mt-4 space-y-2">
+                          {service.points.map((point, index) => (
+                            <li key={index} className="flex gap-2">
+                              <Check
+                                className="my-auto min-h-[20px] min-w-[20px]"
+                                size={20}
+                              />
+                              <span className="md:text-lg">{point.title}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </Accordion>
                       <div className="mt-8 flex flex-col gap-2">
                         <Link
                           href="/"

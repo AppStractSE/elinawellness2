@@ -1,17 +1,10 @@
 "use client";
+import { IContactForm } from "@/types/IContactForm";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { twMerge } from "tailwind-merge";
 import Spinner from "../loaders/Spinner";
-
-interface IContactForm {
-  FullName: string;
-  Email: string;
-  BusinessName: string;
-  PhoneNumber: string;
-  Message: string;
-}
 
 const ContactForm = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -24,7 +17,6 @@ const ContactForm = () => {
     defaultValues: {
       FullName: "",
       Email: "",
-      BusinessName: "",
       PhoneNumber: "",
       Message: "",
     },
@@ -33,7 +25,7 @@ const ContactForm = () => {
 
   function generateEmailHTML(data: IContactForm) {
     const formattedMessage = data.Message.replace(/\n/g, "<br>");
-    return `<div><p><strong>Namn:</strong></p><p>${data.FullName}</p><p><strong>Email:</strong></p><p><a href="mailto:${data.Email}">${data.Email}</a></p><p><strong>Telefon:</strong></p><p><a href="tel:${data.PhoneNumber}">${data.PhoneNumber}</a></p><p><strong>Företag:</strong></p><p>${data.BusinessName}</p><p><strong>Meddelande:</strong></p><p>${formattedMessage}</p></div>`;
+    return `<div><p><strong>Namn:</strong></p><p>${data.FullName}</p><p><strong>Email:</strong></p><p><a href="mailto:${data.Email}">${data.Email}</a></p><p><strong>Telefon:</strong></p><p><a href="tel:${data.PhoneNumber}">${data.PhoneNumber}</a></p><p><strong>Meddelande:</strong></p><p>${formattedMessage}</p></div>`;
   }
 
   const onSubmit = async (data: IContactForm) => {
@@ -44,7 +36,6 @@ const ContactForm = () => {
       message: data.Message,
       messageHtml: generateEmailHTML(data),
     };
-
     toast
       .promise(
         fetch("/api/contact-form", {
@@ -55,9 +46,9 @@ const ContactForm = () => {
           body: JSON.stringify(formData),
         }),
         {
-          loading: "Sending message...",
-          success: "Message has been sent!",
-          error: "An error occured.",
+          loading: "Skickar meddelande...",
+          success: "Meddelande skickat!",
+          error: "Ett fel uppstod.",
         },
         {
           style: {
@@ -106,16 +97,16 @@ const ContactForm = () => {
               errors["FullName"] ? errorClass : "",
             )}
             type="text"
-            placeholder="FullName*"
+            placeholder="För- och efternamn*"
             {...register("FullName", {
-              required: "FullName is required",
+              required: "Fyll i namn",
               minLength: {
                 value: 2,
-                message: "FullName must be at least 2 characters",
+                message: "Minst 2 tecken",
               },
               maxLength: {
                 value: 50,
-                message: "FullName can at most be 50 characters",
+                message: "Max 50 tecken",
               },
             })}
           />
@@ -131,17 +122,18 @@ const ContactForm = () => {
             {errors.FullName?.message}
           </p>
         </div>
+
         <div>
           <input
             className={twMerge(baseClasses, errors["Email"] ? errorClass : "")}
             type="email"
             placeholder="Email*"
             {...register("Email", {
-              required: "Email is required",
+              required: "Fyll i email",
               pattern: {
                 value:
                   /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
-                message: "Email is not valid",
+                message: "Ogiltig emailadress",
               },
             })}
           />
@@ -157,84 +149,65 @@ const ContactForm = () => {
             {errors.Email?.message}
           </p>
         </div>
-        <div className="flex gap-3">
-          <div>
-            <input
-              type="text"
-              className={baseClasses}
-              placeholder="Business name"
-              {...register("BusinessName", {})}
-            />
-            <p
-              role="alert"
-              className={twMerge(
-                errorTextBaseClass,
-                errors["BusinessName"]
-                  ? errorTextVisibleClasses
-                  : errorTextHiddenClasses,
-              )}
-            >
-              {errors.BusinessName?.message}
-            </p>
-          </div>
-          <div>
-            <input
-              className={twMerge(
-                baseClasses,
-                errors["PhoneNumber"] ? errorClass : "",
-              )}
-              type="tel"
-              placeholder="PhoneNumber*"
-              {...register("PhoneNumber", {
-                onChange: (e) => {
-                  e.target.value = e.target.value.replace(/[^0-9]/g, "");
-                },
-                required: "Phone number is required",
-                pattern: {
-                  value: /^[0-9]+$/,
-                  message: "Phone number is not valid",
-                },
-                minLength: {
-                  value: 10,
-                  message: "Phone number must be at least 10 digits",
-                },
-                maxLength: {
-                  value: 15,
-                  message: "Phone number can at most be 15 digits",
-                },
-              })}
-            />
-            <p
-              role="alert"
-              className={twMerge(
-                errorTextBaseClass,
-                errors["PhoneNumber"]
-                  ? errorTextVisibleClasses
-                  : errorTextHiddenClasses,
-              )}
-            >
-              {errors.PhoneNumber?.message}
-            </p>
-          </div>
+
+        <div>
+          <input
+            className={twMerge(
+              baseClasses,
+              errors["PhoneNumber"] ? errorClass : "",
+            )}
+            type="tel"
+            placeholder="Telefonnummer*"
+            {...register("PhoneNumber", {
+              onChange: (e) => {
+                e.target.value = e.target.value.replace(/[^0-9]/g, "");
+              },
+              required: "Fyll i telefonnummer",
+              pattern: {
+                value: /^[0-9]+$/,
+                message: "Ogiltigt telefonnummer",
+              },
+              minLength: {
+                value: 10,
+                message: "Minst 10 siffror",
+              },
+              maxLength: {
+                value: 15,
+                message: "Max 15 siffror",
+              },
+            })}
+          />
+          <p
+            role="alert"
+            className={twMerge(
+              errorTextBaseClass,
+              errors["PhoneNumber"]
+                ? errorTextVisibleClasses
+                : errorTextHiddenClasses,
+            )}
+          >
+            {errors.PhoneNumber?.message}
+          </p>
         </div>
+
         <div>
           <textarea
             maxLength={500}
-            placeholder="Message*"
+            placeholder="Målsättning. Vad behöver du hjälp med?*"
             className={twMerge(
               "h-64 resize-none whitespace-pre-line",
               baseClasses,
               errors["Message"] ? errorClass : "",
             )}
             {...register("Message", {
-              required: "Message is required",
+              required: "Fyll i målsättning",
               minLength: {
                 value: 10,
-                message: "Message must be at least 10 characters",
+                message: "Minst 10 tecken",
               },
               maxLength: {
                 value: 500,
-                message: "Message can at most be 500 characters",
+                message: "Max 500 tecken",
               },
             })}
           ></textarea>
@@ -250,6 +223,7 @@ const ContactForm = () => {
             {errors.Message?.message}
           </p>
         </div>
+        
         <button
           disabled={isSubmitting || formSubmitted}
           type="submit"
@@ -264,7 +238,7 @@ const ContactForm = () => {
               width={24}
             />
           ) : (
-            "Submit"
+            "Skicka"
           )}
         </button>
       </form>
@@ -281,15 +255,17 @@ const ContactForm = () => {
             formSubmitted ? "translate-y-0" : "translate-y-[125%]",
           )}
         >
-          <h6 className="text-3xl lg:text-center lg:text-2xl">Message sent</h6>
+          <h6 className="text-3xl lg:text-center lg:text-2xl">
+            Meddelande skickat!
+          </h6>
           <p className="whitespace-pre-line text-balance text-xl lg:text-center lg:text-xl">
-            We&apos;ll get in touch with you as soon as possible.
+            Tack! Vi återkommer så fort vi kan.
           </p>
           <button
             onClick={() => setFormSubmitted(false)}
             className="inline-block rounded-md bg-primary p-2 px-4 text-center text-xs text-background transition-all duration-200 ease-in-out"
           >
-            Close
+            Stäng
           </button>
         </div>
       </div>
