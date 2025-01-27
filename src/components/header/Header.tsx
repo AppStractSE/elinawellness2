@@ -1,5 +1,4 @@
 "use client";
-import { smoochSans } from "@/util/fonts";
 import { MenuIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -22,7 +21,13 @@ const Header = () => {
               </button>
               <div className="h-6 min-w-[1.5px] bg-primary/50" />
               <Link href="/" className="">
-                <Image width={54} height={54} quality={100} alt="Logo" src="/logo.svg" />
+                <Image
+                  width={54}
+                  height={54}
+                  quality={100}
+                  alt="Logo"
+                  src="/logo.svg"
+                />
               </Link>
             </div>
             <div className="flex items-center gap-4">

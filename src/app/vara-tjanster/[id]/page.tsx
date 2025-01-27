@@ -2,7 +2,7 @@ import ContactSection from "@/components/sections/ContactSection";
 import SubPageHeroSection from "@/components/sections/SubPageHeroSection";
 import TwoPaneSection from "@/components/sections/TwoPaneSection";
 import { content } from "@/data/content";
-import { Metadata } from "next";
+// import { Metadata } from "next";
 import { redirect } from "next/navigation";
 export async function generateStaticParams() {
   return content.services.map((service) => ({
@@ -10,13 +10,8 @@ export async function generateStaticParams() {
   }));
 }
 
-export const metadata: Metadata = {
-  title: "Tjänster | Måleri Viskan",
-  description:
-    "Måleri Viskan - Vi kan måleri! Vi är din lokala målare i Kinna, Skene och Marks kommun.",
-};
-
-export default function Page({ params }: { params: { id: string } }) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default function Page({ params }: any) {
   const service = content.services.find((service) => service.id === params.id);
   if (!service) redirect("/404");
 

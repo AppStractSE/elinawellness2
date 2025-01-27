@@ -41,6 +41,7 @@ export async function POST(req: NextRequest) {
     const responseData = await externalResponse.json();
 
     return NextResponse.json({ success: true, data: responseData });
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (error: any) {
     console.error("Error in API route:", error);
     return NextResponse.json(
