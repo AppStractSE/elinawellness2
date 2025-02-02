@@ -6,6 +6,7 @@ import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 import "@splidejs/react-splide/css";
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
 
 interface Options {
@@ -40,7 +41,11 @@ interface Options {
   };
 }
 const ClientsSection = () => {
-  const isMobile = window.innerWidth <= 768; // Adjust breakpoint as needed
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth <= 768);
+  }, []);
 
   const options: Options = {
     type: "loop",
@@ -77,6 +82,7 @@ const ClientsSection = () => {
       dragFree: true,
     };
   }
+
   const extensions = !isMobile ? { AutoScroll } : {};
   return (
     <section className="bg-white">
