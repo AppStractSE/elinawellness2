@@ -74,6 +74,7 @@ const ClientsSection = () => {
           </p>
         </div>
         <Splide
+          key={isMobile ? "mobile" : "desktop"}
           extensions={isMobile ? undefined : { AutoScroll }}
           options={isMobile ? mobileOptions : desktopOptions}
           aria-labelledby="autoplay-example-heading"
