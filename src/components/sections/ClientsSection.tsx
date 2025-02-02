@@ -1,60 +1,59 @@
 "use client";
 import { content } from "@/data/content";
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
-import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 
 import "@splidejs/react-splide/css";
+import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
 
 const ClientsSection = () => {
-  const [isMobile, setIsMobile] = useState(false);
-  const [extensions, setExtensions] = useState({});
-
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const options: any = {
+  const desktopOptions = {
     type: "loop",
+    gap: "1rem",
     pauseOnHover: true,
+    pauseOnFocus: false,
     resetProgress: false,
     height: "auto",
     pagination: true,
     arrows: true,
     perPage: 4,
     dragFree: true,
-    interval: 5000,
-    speed: 1000,
-    focus: 0,
-    gap: "1rem",
-    autoPlay: true,
-    breakpoints: {
-      768: {
-        perPage: 1,
-        interval: 5000,
-        speed: 1000,
-        autoPlay: true,
-        gap: "0rem",
-        pauseOnHover: true,
-        resetProgress: false,
-        height: "auto",
-        pagination: true,
-        arrows: true,
-      },
+    drag: "free",
+    focus: "center",
+    autoScroll: {
+      speed: 0.33,
     },
   };
 
+  const mobileOptions = {
+    type: "loop",
+    gap: "0rem",
+    pauseOnHover: false,
+    pauseOnFocus: false,
+    resetProgress: false,
+    height: "auto",
+    pagination: true,
+    arrows: true,
+    perPage: 1,
+    focus: "center",
+    autoplay: true,
+    interval: 5000,
+    speed: 1000,
+  };
+  const [isMobile, setIsMobile] = useState(false);
+
   useEffect(() => {
-    window.addEventListener("resize", () => {
-      setIsMobile(window.innerWidth <= 768);
-      setExtensions(isMobile ? {} : { AutoScroll });
-      if (!isMobile) {
-        options.autoScroll = {
-          speed: 0.33,
-          dragFree: true,
-        };
-      }
-    });
+    const handleResize = () => {
+      const mobile = window.innerWidth <= 768;
+      setIsMobile(mobile);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
@@ -75,8 +74,8 @@ const ClientsSection = () => {
           </p>
         </div>
         <Splide
-          extensions={extensions}
-          options={options}
+          extensions={isMobile ? undefined : { AutoScroll }}
+          options={isMobile ? mobileOptions : desktopOptions}
           aria-labelledby="autoplay-example-heading"
           hasTrack={false}
         >
