@@ -4,7 +4,7 @@ import SmallInfoCard from "../cards/SmallInfoCard";
 const InfoCardSection = () => {
   return (
     <section>
-      <div className="max-page-width flex flex-col items-center justify-center gap-12 px-4 py-8 md:py-12">
+      <div className="max-page-width flex flex-col items-center justify-center gap-12 px-4 py-12 md:py-24">
         <div className="grid w-full grid-cols-2 gap-4 lg:grid-cols-4">
           <SmallInfoCard
             topText="CUSTOMER SATISFACTION"

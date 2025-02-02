@@ -14,7 +14,7 @@ const TitleWithContentSection = ({
 }: Props) => {
   return (
     <section className={className}>
-      <div className="space-y-12 py-8 md:py-12">
+      <div className="space-y-12 py-8 md:py-24">
         <div
           className={twMerge(
             "max-page-width flex flex-col gap-4 px-4 md:gap-8",

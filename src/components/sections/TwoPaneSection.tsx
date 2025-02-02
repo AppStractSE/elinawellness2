@@ -26,7 +26,7 @@ const TwoPaneSection = ({
 }: Props) => {
   return (
     <section className={className}>
-      <div className="max-page-width grid grid-cols-1 items-center gap-8 px-4 py-8 md:grid-cols-2 md:gap-24 md:py-12">
+      <div className="max-page-width grid grid-cols-1 items-center gap-8 px-4 py-12 md:grid-cols-2 md:gap-24 md:py-24">
         {image && (
           <div>
             <Image
@@ -58,7 +58,7 @@ const TwoPaneSection = ({
             rtl ? "md:order-[-1]" : "",
           )}
         >
-          <h2 className="text-3xl font-medium tracking-wider sm:text-4xl md:text-5xl">
+          <h2 className="text-3xl font-semibold tracking-wide sm:text-4xl md:text-5xl">
             {title}
           </h2>
           <p className="whitespace-pre-line leading-relaxed tracking-wider">

@@ -16,7 +16,7 @@ interface Props {
 const ContactSection = ({ className }: Props) => {
   return (
     <section className={className}>
-      <div className="max-page-width flex justify-center px-4 py-8 md:py-12">
+      <div className="max-page-width flex justify-center px-4 py-12 md:py-24">
         <div className="flex w-full flex-col justify-between gap-12 md:flex-row md:gap-8">
           <div className="flex flex-col gap-4 md:max-w-[32rem]">
             <h2 className="text-3xl font-medium tracking-wider sm:text-4xl md:text-5xl">

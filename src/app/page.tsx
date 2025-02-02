@@ -1,11 +1,11 @@
 import CenteredSection from "@/components/sections/CenteredSection";
+import ClientsSection from "@/components/sections/ClientsSection";
 import ContactSection from "@/components/sections/ContactSection";
 import HeroSection from "@/components/sections/HeroSection";
-import MiniContactFormSection from "@/components/sections/MiniContactFormSection";
 import TitleWithContentSection from "@/components/sections/TitleWithContentSection";
+import TrainersSection from "@/components/sections/TrainersSection";
 import TwoPaneSection from "@/components/sections/TwoPaneSection";
 import Services from "@/components/services/Services";
-import { ArrowUpRight, Send } from "lucide-react";
 import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,101 +16,18 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <MiniContactFormSection />
+      <ClientsSection />
       <TwoPaneSection
-        rtl
         button={{
           href: "/kontakt",
           text: "Kom igång!",
         }}
-        className="bg-background [&>*:first-child]:lg:pt-0"
+        className="bg-background"
         images={["/food001.jpg", "/IMG_6818.JPG", "/IMG_3526.jpg", "/118.JPG"]}
         title="Vår filosofi"
         text={`Vi anpassar alla våra basprogram för att passa just dig, din kropp och din livsstil. Vi strävar alltid efter att erbjuda personlig vägledning för att optimera din resa mot en hälsosammare livsstil.\n\nVi tror på en holistisk approach där mat, träning och vila samverkar för att främja välbefinnande. Oavsett om du är nybörjare eller har en etablerad träningsrutin anpassar vi träningen efter dig och din situation. \n\nVi erbjuder flexibla träningsalternativ, antingen på gym, hemma eller på  andra platser. Oavsett om du föredrar kroppsviktsträning hemma eller mer avancerad träningsplanering på gymmet, så skapar vi en plan som passar just dig och ditt liv.`}
       />
-      <section className="bg-white">
-        <div className="max-page-width flex flex-col gap-8 px-4 py-8 md:gap-12 md:py-12">
-          <h2 className="text-balance text-center text-3xl font-medium tracking-wider sm:text-4xl md:text-5xl">
-            Det här är Elina Wellness
-          </h2>
-          <div className="grid grid-cols-1 items-start gap-12 md:grid-cols-2 md:gap-4">
-            <div className="flex flex-col gap-4">
-              <div className="h-full w-full">
-                <img
-                  src="/IMG_8625.webp"
-                  className="h-full max-h-[650px] w-full rounded-md object-cover object-center md:max-h-[700px]"
-                />
-              </div>
-              <h2 className="mt-4 text-2xl font-medium tracking-wider sm:text-3xl md:text-4xl">
-                Lina
-              </h2>
-              <p className="whitespace-pre-line leading-relaxed tracking-wider md:text-balance">
-                Lina är utbildad till personlig tränare och fysioterapeut och
-                brinner för en hälsosam livsstil där rörelseglädje står i fokus.
-                Hon fick sin PT-licens år 2019 och är legitimerad fysioterapeut
-                sedan 2020. Förutom att jobba som coach på ElinaWellness jobbar
-                Lina också som fysioterapeut där hon dagligen rehabiliterat
-                patienter som har ont i muskler och leder.
-              </p>
-              <a
-                href="/"
-                target="_blank"
-                rel="noreferrer"
-                className="flex w-fit items-center gap-2 font-medium hover:text-primary/50"
-              >
-                <ArrowUpRight />
-                <span>Instagram</span>
-              </a>
-              <a
-                href="mailto:lina@elinawellness.se"
-                target="_blank"
-                rel="noreferrer"
-                className="flex w-fit items-center gap-2 font-medium hover:text-primary/50"
-              >
-                <Send size={20} />
-                <span>lina@elinawellness.se</span>
-              </a>
-            </div>
-            <div className="flex flex-col gap-4">
-              <div className="h-full w-full">
-                <img
-                  src="/IMG_8626.webp"
-                  className="h-full max-h-[650px] w-full rounded-md object-cover object-center md:max-h-[700px]"
-                />
-              </div>
-              <h2 className="mt-4 text-2xl font-medium tracking-wider sm:text-3xl md:text-4xl">
-                Elin
-              </h2>
-              <p className="whitespace-pre-line leading-relaxed tracking-wider md:text-balance">
-                Elin är utbildad inom kostventenskap som kostvetare. Hon tog
-                examen 2018 och har sedan dess jobbat inom hälsobranchen på
-                olika sätt, både som anställd och egenföretagare. Elin brinner
-                för att hjälpa andra till en hållbar och bättre livsstil genom
-                en bra och hälsosamt kost och rörelse. Förutom som coach på
-                ElinaWellness driver Elin eget inom hälsokost och skönhet.
-              </p>
-              <a
-                href="/"
-                target="_blank"
-                rel="noreferrer"
-                className="flex w-fit items-center gap-2 font-medium hover:text-primary/50"
-              >
-                <ArrowUpRight />
-                <span>Instagram</span>
-              </a>
-              <a
-                href="mailto:elin@elinawellness.se"
-                target="_blank"
-                rel="noreferrer"
-                className="flex w-fit items-center gap-2 font-medium hover:text-primary/50"
-              >
-                <Send size={20} />
-                <span>elin@elinawellness.se</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <TrainersSection />
       <TitleWithContentSection
         title="Vad vi erbjuder"
         text={`Alla våra träningsprogram är unikt anpassade för att passa dig, din kropp och livspussel. Vi erbjuder alltid personlig guidning för att optimera din väg mot en hälsosammare livsstil.`}

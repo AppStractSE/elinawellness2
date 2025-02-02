@@ -4,10 +4,10 @@ export const content = {
   theme: {
     primaryColor: "#1b1b1b",
     secondaryColor: "#353535",
-    backgroundColor: "#F4FCF0",
+    backgroundColor: "#F1FFEB",
     foregroundColor: "#171717",
     accentColor: "#2EB800",
-    maxPageWidth: "92rem",
+    maxPageWidth: "1300px",
   },
 
   applyTheme(theme: Record<string, string>) {
@@ -49,7 +49,7 @@ export const content = {
   },
   services: [
     {
-      id: "web-development",
+      id: "kost-och-traeningsupplaegg",
       title: "Kost- och träningsupplägg",
       description:
         "Ta din träning och kost till nästa nivå med ett individanpassat program.",
@@ -77,7 +77,7 @@ export const content = {
       ],
     },
     {
-      id: "mobile-development",
+      id: "traeningsupplaegg",
       title: "Träningsupplägg",
       description:
         "We create mobile apps for Android and iOS that provide value to your customers.",
@@ -91,7 +91,7 @@ export const content = {
       ],
     },
     {
-      id: "design",
+      id: "kostradgivning",
       title: "Kostrådgivning",
       description:
         "We design user interfaces and user experiences that are intuitive and delightful.",
@@ -115,7 +115,7 @@ export const content = {
       ],
     },
     {
-      id: "seo",
+      id: "kostradgivarsamtal",
       title: "Kostrådgivarsamtal",
       description:
         "Ett fokuserat samtal för att ge dig konkreta råd och strategier för din kost och hälsa.",
