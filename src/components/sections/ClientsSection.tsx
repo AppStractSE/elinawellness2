@@ -7,10 +7,42 @@ import "@splidejs/react-splide/css";
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { twMerge } from "tailwind-merge";
+
+interface Options {
+  type: string;
+  gap: string;
+  pauseOnHover: boolean;
+  resetProgress: boolean;
+  height: string;
+  pagination: boolean;
+  arrows: boolean;
+  perPage: number;
+  dragFree: boolean;
+  focus: number;
+  breakpoints: {
+    768: {
+      autoPlay: boolean;
+      interval: number;
+      speed: number;
+      perPage: number;
+      gap: number;
+      autoplay: boolean;
+      pauseOnHover: boolean;
+      resetProgress: boolean;
+      height: string;
+      pagination: boolean;
+      arrows: boolean;
+    };
+  };
+  autoScroll?: {
+    speed: number;
+    dragFree: boolean;
+  };
+}
 const ClientsSection = () => {
   const isMobile = window.innerWidth <= 768; // Adjust breakpoint as needed
 
-  let options = {
+  const options: Options = {
     type: "loop",
     gap: "1rem",
     pauseOnHover: true,
@@ -39,7 +71,6 @@ const ClientsSection = () => {
     },
   };
 
-  // ✅ Add autoScroll directly to the object
   if (!isMobile) {
     options.autoScroll = {
       speed: 0.33,
