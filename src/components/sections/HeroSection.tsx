@@ -13,14 +13,11 @@ const HeroSection = () => {
       <div className="relative flex min-h-[120vh] flex-col justify-end border-b border-primary/50">
         <div className="absolute inset-0 bg-black/50"></div>
         <div className="max-hero-width relative z-10 w-full px-4 py-12 lg:gap-8 lg:py-24 xl:py-32">
-          <div className="flex flex-col gap-4 md:w-1/2">
+          <div className="flex flex-col gap-6 md:w-1/2">
             <h1 className="whitespace-pre-line text-balance text-3xl font-medium text-background sm:text-4xl md:text-5xl lg:text-6xl">
               {content.homePage.title}
             </h1>
-            <h2 className="text-xl font-medium text-background md:text-2xl lg:text-3xl">
-              {content.homePage.subtitle}
-            </h2>
-            <h2 className="whitespace-pre-line text-lg text-background sm:text-balance lg:text-xl">
+            <h2 className="whitespace-pre-line text-lg font-medium text-background sm:text-balance md:text-xl">
               {`Upplev hälsa och välbefinnande med oss - anpassat för dig. Få personlig vägledning och smakrika recept för dina hälsomål, oavsett din träningsnivå.`}
             </h2>
             <div className="w-full md:w-2/3">
