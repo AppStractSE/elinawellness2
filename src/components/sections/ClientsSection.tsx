@@ -9,47 +9,13 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
 
-interface Options {
-  type: string;
-  gap: string;
-  pauseOnHover: boolean;
-  resetProgress: boolean;
-  height: string;
-  pagination: boolean;
-  arrows: boolean;
-  perPage: number;
-  dragFree: boolean;
-  focus: number;
-  breakpoints: {
-    768: {
-      autoPlay: boolean;
-      interval: number;
-      speed: number;
-      perPage: number;
-      gap: number;
-      autoplay: boolean;
-      pauseOnHover: boolean;
-      resetProgress: boolean;
-      height: string;
-      pagination: boolean;
-      arrows: boolean;
-    };
-  };
-  autoScroll?: {
-    speed: number;
-    dragFree: boolean;
-  };
-}
 const ClientsSection = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [extensions, setExtensions] = useState({});
 
-  useEffect(() => {
-    setIsMobile(window.innerWidth <= 768);
-  }, []);
-
-  const options: Options = {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const options: any = {
     type: "loop",
-    gap: "1rem",
     pauseOnHover: true,
     resetProgress: false,
     height: "auto",
@@ -57,33 +23,40 @@ const ClientsSection = () => {
     arrows: true,
     perPage: 4,
     dragFree: true,
+    interval: 5000,
+    speed: 1000,
     focus: 0,
+    gap: "1rem",
+    autoPlay: true,
     breakpoints: {
       768: {
-        autoPlay: true,
+        perPage: 1,
         interval: 5000,
         speed: 1000,
-        perPage: 1,
-        gap: 0,
-        autoplay: true,
+        autoPlay: true,
+        gap: "0rem",
         pauseOnHover: true,
         resetProgress: false,
         height: "auto",
-
         pagination: true,
         arrows: true,
       },
     },
   };
 
-  if (!isMobile) {
-    options.autoScroll = {
-      speed: 0.33,
-      dragFree: true,
-    };
-  }
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      setIsMobile(window.innerWidth <= 768);
+      setExtensions(isMobile ? {} : { AutoScroll });
+      if (!isMobile) {
+        options.autoScroll = {
+          speed: 0.33,
+          dragFree: true,
+        };
+      }
+    });
+  }, []);
 
-  const extensions = !isMobile ? { AutoScroll } : {};
   return (
     <section className="bg-white">
       <div className="space-y-12 py-8 md:py-24">
