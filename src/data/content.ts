@@ -4,10 +4,10 @@ export const content = {
   theme: {
     primaryColor: "#1b1b1b",
     secondaryColor: "#353535",
-    backgroundColor: "#F4FCF0",
+    backgroundColor: "#F1FFEB",
     foregroundColor: "#171717",
     accentColor: "#2EB800",
-    maxPageWidth: "92rem",
+    maxPageWidth: "1300px",
   },
 
   applyTheme(theme: Record<string, string>) {

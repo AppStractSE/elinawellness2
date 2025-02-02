@@ -16,6 +16,7 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   scroll-behavior: smooth;
+  font-size: 18px;
 }
 
 body::-webkit-scrollbar {
@@ -24,6 +25,11 @@ body::-webkit-scrollbar {
 
 .max-page-width {
   max-width: var(--max-page-width);
+  @apply mx-auto;
+}
+
+.max-hero-width {
+  max-width: calc(var(--max-page-width) + 100px);
   @apply mx-auto;
 }
 
@@ -37,11 +43,11 @@ body::-webkit-scrollbar {
 }
 
 .splide__pagination__page {
-  @apply opacity-50 transition-all duration-200 ease-in-out rounded-sm w-4 h-4 bg-primary #{!important};
+  @apply opacity-25 transition-all duration-200 ease-in-out w-2 h-2 rounded-full bg-primary #{!important};
 }
 
 .splide__pagination__page.is-active {
-  @apply opacity-100 w-6 h-4 scale-100 #{!important};
+  @apply opacity-100 w-2 h-2 scale-100 rounded-full #{!important};
 }
 
 .splide-slide-content {

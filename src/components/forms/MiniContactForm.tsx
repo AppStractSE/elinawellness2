@@ -1,5 +1,6 @@
 "use client";
 import { IContactForm } from "@/types/IContactForm";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
@@ -13,16 +14,26 @@ const ProgressBar = ({
   currentStep: number;
   totalSteps: number;
 }) => {
-  return (
-    <div className="mb-4">
-      <div className="relative h-2 w-full overflow-hidden rounded-sm bg-gray-300">
+  const renderSteps = () => {
+    const steps = [];
+    for (let i = 1; i <= totalSteps; i++) {
+      steps.push(
         <div
-          className="inset-0 h-2 animate-pulse bg-primary transition-all duration-500 ease-in-out"
-          style={{ width: `calc(${currentStep} / ${totalSteps} * 100%)` }}
-        ></div>
-      </div>
-    </div>
-  );
+          key={i}
+          className={twMerge(
+            "h-1 flex-1 rounded-full transition-all duration-500 ease-in-out",
+            i < currentStep
+              ? "bg-background"
+              : i === currentStep
+                ? "bg-background"
+                : "bg-background/10",
+          )}
+        ></div>,
+      );
+    }
+    return steps;
+  };
+  return <div className="mb-4 flex gap-4">{renderSteps()}</div>;
 };
 
 const MiniContactForm = () => {
@@ -96,10 +107,10 @@ const MiniContactForm = () => {
   };
 
   const baseClasses =
-    "w-full p-4 shadow-sm rounded-md focus:outline-none border tracking-widest ring-0 focus:outline-1 focus:border-primary focus-visible:outline-offset-0 transition-all duration-500 ease-in-out";
+    "backdrop-blur-sm placeholder:text-background/75 w-full p-4 shadow-sm rounded-md focus:outline-none ring-1 ring-background/50 text-base tracking-widest focus-visible:ring-background hover:ring-background focus-visible:outline-offset-0 focus:ring-background/50 transition-all duration-500 ease-in-out bg-background/10 text-white";
 
   const errorClass =
-    "outline outline-1 outline-offset-0 outline-red-500 placeholder:text-red-500";
+    "outline-offset-0 ring-red-500/75 focus:ring-red-500 focus-visible:ring-red-500 placeholder:text-red-500";
   const errorTextBaseClass =
     "text-red-500 text-xs font-medium tracking-widest transition-all duration-500 ease-in-out";
   const errorTextHiddenClasses = "opacity-0 max-h-0 ";
@@ -132,7 +143,9 @@ const MiniContactForm = () => {
               className={twMerge(
                 "h-48 resize-none whitespace-pre-line",
                 baseClasses,
-                errors["Message"] ? errorClass : "",
+                errors["Message"]
+                  ? twMerge(errorClass, "bg-red-500/10 text-white")
+                  : "",
               )}
               {...register("Message", {
                 required: "Fyll i målsättning",
@@ -270,36 +283,39 @@ const MiniContactForm = () => {
   };
 
   return (
-    <div className="relative transition-all duration-1000 ease-in-out">
+    <div className="relative mt-4 flex flex-col gap-4 transition-all duration-500 ease-in-out">
       <ProgressBar currentStep={step} totalSteps={totalSteps} />
+      {step > 1 && (
+        <button
+          className="inline-flex items-center text-sm text-background/75 hover:text-background w-fit"
+          onClick={prevStep}
+        >
+          <ChevronLeft size={18} />
+          Gå tillbaka
+        </button>
+      )}
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="mx-auto flex flex-col gap-3"
+        className="mx-auto flex w-full flex-col gap-3"
         name="contact-form"
       >
         <input type="hidden" name="required-field" value="contact-form" />
         {renderStepContent()}
-        <div
-          className={twMerge(
-            "mt-4 flex justify-between",
-            step === 1 && "justify-end",
-          )}
-        >
-          {step > 1 && (
-            <button className="rounded-md border px-4 py-2" onClick={prevStep}>
-              Tillbaka
-            </button>
-          )}
+        <div className={twMerge("mt-4")}>
           {step < totalSteps && (
-            <button className="rounded-md border px-4 py-2" onClick={nextStep}>
+            <button
+              className="inline-flex w-full items-center justify-center rounded-md bg-accent/50 md:bg-accent/25 px-4 py-4 text-background backdrop-blur-sm md:hover:bg-accent/75"
+              onClick={nextStep}
+            >
               Nästa
+              <ChevronRight size={24} />
             </button>
           )}
           {step === totalSteps && (
             <button
               disabled={isSubmitting || formSubmitted}
               type="submit"
-              className="rounded-md border px-4 py-2"
+              className="w-full rounded-md bg-accent/50 md:bg-accent/25 px-4 py-4 text-background backdrop-blur-sm md:hover:bg-accent/75"
             >
               {isSubmitting ? (
                 <Spinner
