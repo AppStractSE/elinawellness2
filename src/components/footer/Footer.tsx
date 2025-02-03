@@ -1,22 +1,32 @@
 import { content } from "@/data/content";
 import { socials } from "@/data/socials";
+import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 const Footer = () => {
-  const ICON_SIZE = 24;
   const currentYear = new Date().getFullYear();
   return (
-    <footer className="bg-primary text-background">
-      <div className="max-page-width space-y-8 px-4 pb-8 pt-12">
-        <div className="flex flex-wrap justify-between gap-12">
-          <div className="flex flex-1 flex-col gap-4">
-            <h3 className="text-balance text-2xl font-bold">
-              WE GOT something cooking. Reach out to us!
-            </h3>
+    <footer className="bg-primary px-4 py-8 text-background">
+      <div className="max-page-width space-y-8 md:space-y-16">
+        <div></div>
+        <div className="grid grid-cols-2 gap-x-4 gap-y-12 lg:grid-cols-4">
+          <div className="col-span-2 w-fit">
+            <Link
+              href="/"
+              className="relative h-full w-32 md:w-48 block"
+            >
+              <Image
+                className="!relative fill-white text-background invert"
+                quality={100}
+                fill
+                alt="Logo"
+                src="/logo.svg"
+              />
+            </Link>
           </div>
-          <div className="flex min-w-fit flex-1 flex-col gap-4">
-            <h5 className="text-lg font-semibold">Info</h5>
-            <div className="flex flex-col gap-2">
+          <div className="flex min-w-fit flex-col gap-4">
+            <div className="flex flex-col gap-2 text-xl font-light md:text-3xl">
               <Link className="w-fit hover:underline" href="/om-oss">
                 Om oss
               </Link>
@@ -24,54 +34,28 @@ const Footer = () => {
                 Kontakt
               </Link>
               <Link className="w-fit hover:underline" href="/vara-tjanster">
-                Vara tjänster
+                Våra tjänster
               </Link>
             </div>
           </div>
-          <div className="flex min-w-fit flex-1 flex-col gap-4">
-            <h5 className="text-lg font-semibold">Info</h5>
+          <div className="flex min-w-fit flex-col gap-4">
+            <h5 className="text-base font-semibold md:text-lg">Följ oss</h5>
             <div className="flex flex-col gap-2">
-              <Link className="w-fit hover:underline" href="/om-oss">
-                Om oss
-              </Link>
-              <Link className="w-fit hover:underline" href="/kontakt">
-                Kontakt
-              </Link>
-              <Link className="w-fit hover:underline" href="/vara-tjanster">
-                Vara tjänster
-              </Link>
-            </div>
-          </div>
-          <div className="flex min-w-fit flex-1 flex-col gap-4">
-            <h5 className="text-lg font-semibold">Info</h5>
-            <div className="flex flex-col gap-2">
-              <Link className="w-fit hover:underline" href="/om-oss">
-                Om oss asdasd
-              </Link>
-              <Link className="w-fit hover:underline" href="/kontakt">
-                Kontakt
-              </Link>
-              <Link className="w-fit hover:underline" href="/vara-tjanster">
-                Vara tjänster
-              </Link>
+              {socials.map((social) => (
+                <Link
+                  key={social.href}
+                  href={social.href}
+                  className="flex w-fit items-center gap-2 text-sm hover:underline md:text-base"
+                >
+                  <ArrowUpRight size={16} />
+                  {social.name}
+                </Link>
+              ))}
             </div>
           </div>
         </div>
         <hr className="border-background/25" />
-        <div className="flex items-center gap-2">
-          {socials.map((social) => (
-            <a
-              key={social.href}
-              href={social.href}
-              target="_blank"
-              rel="noreferrer"
-              className="block rounded-full bg-background/50 p-2 hover:bg-background"
-            >
-              <img src={social.icon} width={ICON_SIZE} height={ICON_SIZE} />
-            </a>
-          ))}
-        </div>
-        <div className="mt-4 flex flex-col justify-between gap-4 md:flex-row md:items-center">
+        <div className="flex flex-col justify-between gap-4 md:flex-row md:items-center">
           <p className="text-xs font-semibold text-background/50">
             © {currentYear} {content.company.name}. All rights reserved.
           </p>
