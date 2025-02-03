@@ -119,7 +119,7 @@ const MiniContactForm = () => {
   const nextStep = async () => {
     if (step === 1) {
       const isValid = await trigger("Message");
-      if (!isValid) return; // Stop here if validation fails
+      if (!isValid) return;
     }
     if (step < totalSteps) {
       setStep(step + 1);
@@ -287,7 +287,7 @@ const MiniContactForm = () => {
       <ProgressBar currentStep={step} totalSteps={totalSteps} />
       {step > 1 && (
         <button
-          className="inline-flex items-center text-sm text-background/75 hover:text-background w-fit"
+          className="inline-flex w-fit items-center text-sm text-background/75 hover:text-background"
           onClick={prevStep}
         >
           <ChevronLeft size={18} />
@@ -304,7 +304,7 @@ const MiniContactForm = () => {
         <div className={twMerge("mt-4")}>
           {step < totalSteps && (
             <button
-              className="inline-flex w-full items-center justify-center rounded-md bg-accent/50 md:bg-accent/25 px-4 py-4 text-background backdrop-blur-sm md:hover:bg-accent/75"
+              className="inline-flex w-full items-center justify-center rounded-md bg-accent/50 px-4 py-4 text-background backdrop-blur-sm md:bg-accent/25 md:hover:bg-accent/75"
               onClick={nextStep}
             >
               Nästa
@@ -315,7 +315,7 @@ const MiniContactForm = () => {
             <button
               disabled={isSubmitting || formSubmitted}
               type="submit"
-              className="w-full rounded-md bg-accent/50 md:bg-accent/25 px-4 py-4 text-background backdrop-blur-sm md:hover:bg-accent/75"
+              className="w-full rounded-md bg-accent/50 px-4 py-4 text-background backdrop-blur-sm md:bg-accent/25 md:hover:bg-accent/75"
             >
               {isSubmitting ? (
                 <Spinner
@@ -332,7 +332,6 @@ const MiniContactForm = () => {
           )}
         </div>
       </form>
-
       <div
         className={twMerge(
           "absolute inset-0 left-0 top-0 -m-2 overflow-hidden backdrop-blur-sm transition-all delay-75 duration-500 ease-in-out lg:backdrop-blur-sm",
@@ -345,10 +344,10 @@ const MiniContactForm = () => {
             formSubmitted ? "translate-y-0" : "translate-y-[125%]",
           )}
         >
-          <h6 className="text-3xl lg:text-center lg:text-2xl">
+          <h6 className="text-3xl text-background lg:text-center lg:text-2xl">
             Meddelande skickat!
           </h6>
-          <p className="whitespace-pre-line text-balance text-xl lg:text-center lg:text-xl">
+          <p className="whitespace-pre-line text-balance text-xl text-background lg:text-center lg:text-xl">
             Tack! Vi återkommer så fort vi kan.
           </p>
           <button
