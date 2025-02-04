@@ -17,7 +17,7 @@ const TitleWithContentSection = ({
       <div className="space-y-12 py-8 md:py-24">
         <div
           className={twMerge(
-            "max-page-width flex flex-col gap-4 px-4 md:gap-8",
+            "max-page-width flex flex-col gap-8 px-4 md:gap-12",
           )}
         >
           <h2 className="text-3xl font-medium tracking-wider sm:text-4xl md:text-5xl">

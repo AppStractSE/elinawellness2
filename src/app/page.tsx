@@ -1,6 +1,7 @@
 import CenteredSection from "@/components/sections/CenteredSection";
 import ClientsSection from "@/components/sections/ClientsSection";
 import ContactSection from "@/components/sections/ContactSection";
+import FAQSection from "@/components/sections/FAQSection";
 import HeroSection from "@/components/sections/HeroSection";
 import TitleWithContentSection from "@/components/sections/TitleWithContentSection";
 import TrainersSection from "@/components/sections/TrainersSection";
@@ -38,14 +39,13 @@ export default function Home() {
         image="/ready-for-change.webp"
         title="Redo för förändring?"
         button={{
-          href: "/",
+          href: "/kontakt",
           text: "Jag är redo!",
         }}
-        text="Click here to edit this paragraph and add your own content. This is a
-          great place to expand on the title and any relevant details or
-          information."
+        text="Låt oss komma igång redan idag!"
       />
       <ContactSection />
+      <FAQSection />
     </>
   );
 }

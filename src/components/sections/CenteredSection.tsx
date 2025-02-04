@@ -19,7 +19,7 @@ const CenteredSection = ({ image, title, text, button }: Props) => {
       }}
     >
       <div className="absolute inset-0 bg-black/25" />
-      <div className="max-page-width relative flex flex-col items-center justify-center gap-8 px-4 py-12 md:gap-12 md:py-24 lg:py-48">
+      <div className="max-page-width relative flex flex-col items-center justify-center gap-8 px-4 py-8 md:gap-12 md:py-24 lg:py-48">
         <h2 className="max-w-3xl whitespace-pre-line text-balance text-center text-4xl font-medium text-background sm:text-5xl md:text-6xl">
           {title}
         </h2>
