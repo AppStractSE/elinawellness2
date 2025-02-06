@@ -67,3 +67,23 @@ body::-webkit-scrollbar {
   height: auto !important;
   width: auto !important;
 }
+
+.custom__pagination {
+  @apply justify-start relative #{!important};
+
+  .splide__pagination__page.is-active {
+    @apply bg-background #{!important};
+  }
+
+  .splide__pagination__page {
+    @apply bg-background/40 opacity-100 #{!important};
+  }
+}
+
+.splide__progress {
+  @apply mx-auto w-full rounded-sm overflow-hidden h-1 bg-background/30 #{!important};
+}
+
+.splide__progress__bar {
+  @apply bg-background h-1 #{!important};
+}

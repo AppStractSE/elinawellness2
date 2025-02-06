@@ -3,10 +3,12 @@ import ClientsSection from "@/components/sections/ClientsSection";
 import ContactSection from "@/components/sections/ContactSection";
 import FAQSection from "@/components/sections/FAQSection";
 import HeroSection from "@/components/sections/HeroSection";
+import ReviewSection from "@/components/sections/ReviewSection";
 import TitleWithContentSection from "@/components/sections/TitleWithContentSection";
 import TrainersSection from "@/components/sections/TrainersSection";
 import TwoPaneSection from "@/components/sections/TwoPaneSection";
 import Services from "@/components/services/Services";
+
 import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -28,6 +30,7 @@ export default function Home() {
         title="Vår filosofi"
         text={`Vi anpassar alla våra basprogram för att passa just dig, din kropp och din livsstil. Vi strävar alltid efter att erbjuda personlig vägledning för att optimera din resa mot en hälsosammare livsstil.\n\nVi tror på en holistisk approach där mat, träning och vila samverkar för att främja välbefinnande. Oavsett om du är nybörjare eller har en etablerad träningsrutin anpassar vi träningen efter dig och din situation. \n\nVi erbjuder flexibla träningsalternativ, antingen på gym, hemma eller på  andra platser. Oavsett om du föredrar kroppsviktsträning hemma eller mer avancerad träningsplanering på gymmet, så skapar vi en plan som passar just dig och ditt liv.`}
       />
+      <ReviewSection />
       <TrainersSection />
       <TitleWithContentSection
         title="Vad vi erbjuder"
