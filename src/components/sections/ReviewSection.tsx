@@ -64,12 +64,8 @@ const ReviewSection = () => {
   };
   return (
     <section className="bg-primary text-background">
-      <div className="max-page-width grid grid-cols-1 gap-8 px-4 py-12 md:grid-cols-12 md:gap-12 md:py-24">
-        <div
-          className={twMerge(
-            "flex w-full flex-1 flex-col gap-4 md:col-span-5 md:gap-8",
-          )}
-        >
+      <div className="max-page-width grid grid-cols-1 gap-8 px-4 py-12 md:grid-cols-2 md:gap-24 md:py-24">
+        <div className={twMerge("flex w-full flex-1 flex-col gap-4 md:gap-8")}>
           <h2 className="text-3xl font-semibold tracking-wide sm:text-4xl md:text-5xl">
             Vad våra klienter har att säga
           </h2>
@@ -88,7 +84,7 @@ const ReviewSection = () => {
             </Link>
           </div>
         </div>
-        <div className="flex flex-col gap-4 md:col-span-7 md:gap-8">
+        <div className="flex flex-col gap-4 md:gap-8">
           <div className="flex items-center justify-end gap-4">
             <div
               onClick={handlePrevEvent}
