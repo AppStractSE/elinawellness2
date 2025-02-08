@@ -12,10 +12,7 @@ const Footer = () => {
         <div></div>
         <div className="grid grid-cols-2 gap-x-4 gap-y-12 lg:grid-cols-4">
           <div className="col-span-2 w-fit">
-            <Link
-              href="/"
-              className="relative h-full w-32 md:w-48 block"
-            >
+            <Link href="/" className="relative block h-full w-32 md:w-48">
               <Image
                 className="!relative fill-white text-background invert"
                 quality={100}
@@ -30,8 +27,8 @@ const Footer = () => {
               <Link className="w-fit hover:underline" href="/om-oss">
                 Om oss
               </Link>
-              <Link className="w-fit hover:underline" href="/kontakt">
-                Kontakt
+              <Link className="w-fit hover:underline" href="/kom-igang">
+                Kom igång
               </Link>
               <Link className="w-fit hover:underline" href="/vara-tjanster">
                 Våra tjänster

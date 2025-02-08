@@ -20,7 +20,7 @@ export default function Page({ params }: any) {
       <SubPageHeroSection
         // image="/image001.jpeg"
         button={{
-          href: "/kontakt",
+          href: "/kom-igang",
           text: "Jag vill veta mer",
         }}
         title={service.title}

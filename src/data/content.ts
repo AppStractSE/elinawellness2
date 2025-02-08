@@ -35,7 +35,7 @@ export const content = {
     button: "Get started",
   },
   contactSection: {
-    title: "Kom i kontakt med oss",
+    title: "Kom igång med oss",
     description:
       "Vill du komma igång med ett hälsosammare välbefinnande? Vi kan till exempel hjälpa dig med att",
     points: [

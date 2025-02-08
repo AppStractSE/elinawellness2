@@ -1,4 +1,4 @@
-import { ArrowUpRight, Send } from "lucide-react";
+import { Instagram, Send } from "lucide-react";
 import Image from "next/image";
 
 interface Props {
@@ -38,16 +38,16 @@ const TrainerCard = ({
           href={instagram}
           target="_blank"
           rel="noreferrer"
-          className="flex w-fit items-center gap-2 font-medium hover:text-primary/50"
+          className="flex w-fit items-center gap-4 font-medium hover:text-primary/50"
         >
-          <ArrowUpRight />
+          <Instagram size={20} />
           <span>Instagram</span>
         </a>
         <a
           href={`mailto:${email}`}
           target="_blank"
           rel="noreferrer"
-          className="flex w-fit items-center gap-2 font-medium hover:text-primary/50"
+          className="flex w-fit items-center gap-4 font-medium hover:text-primary/50"
         >
           <Send size={20} />
           <span>{email}</span>

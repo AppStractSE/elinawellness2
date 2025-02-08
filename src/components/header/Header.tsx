@@ -2,13 +2,22 @@
 import { MenuIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import Drawer from "../drawer/Drawer";
 
 const Header = () => {
-  const ICON_SIZE = 24;
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const ICON_SIZE = 24;
+  const pathname = usePathname();
+  useEffect(() => {
+    setIsDrawerOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    setIsDrawerOpen(false);
+  }, [pathname]);
   const buttonBaseClasses = "px-3 py-2 text-xs font-semibold";
   return (
     <>
@@ -44,13 +53,13 @@ const Header = () => {
                 Våra tjänster
               </Link>
               <Link
-                href="/kontakt"
+                href="/kom-igang"
                 className={twMerge(
                   buttonBaseClasses,
                   "rounded-full bg-accent/90 hover:bg-accent",
                 )}
               >
-                Kontakt
+                Kom igång
               </Link>
             </div>
           </div>
