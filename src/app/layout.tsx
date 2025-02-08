@@ -12,6 +12,7 @@ const DMSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://dev.elinawellness.se'),
   title: {
     template: "%s | Elina Wellness",
     default: "Elina Wellness | Titel",
