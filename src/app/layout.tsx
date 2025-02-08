@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     siteName: "Elina Wellness",
     images: [
       {
-        url: "/IMG_6980.JPG",
+        url: "/hero-image.webp",
         width: 800,
         height: 600,
         alt: "Elina Wellness - Hälsa och välbefinnande",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     title: "Elina Wellness",
     images: [
       {
-        url: "/IMG_6980.JPG",
+        url: "/hero-image.webp",
         width: 800,
         height: 600,
         alt: "Elina Wellness - Hälsa och välbefinnande",
