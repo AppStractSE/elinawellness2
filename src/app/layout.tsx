@@ -1,7 +1,7 @@
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
 import InitializeTheme from "@/components/InitializeTheme";
-import { Metadata } from "next";
+import { Metadata, Viewport } from "next";
 import { DM_Sans } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 import "./globals.scss";
@@ -50,6 +50,9 @@ export const metadata: Metadata = {
       "Upplev hälsa och välbefinnande med Elina Wellness - anpassat för dig. Få personlig vägledning och smakrika recept för dina hälsomål, oavsett din träningsnivå.",
   },
   robots: "max-image-preview:large",
+};
+
+export const viewport: Viewport = {
   themeColor: "#f1ffeb",
 };
 
