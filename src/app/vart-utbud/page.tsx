@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Elina Wellness | Vårt utbud",
     description:
-      "Vill du komma igång med träning och hälsa? Här hittar du vårt utbud som är anpassade för dig.",
+      "Vill du komma igång med träning och hälsa? Här hittar du vårt utbud som är anpassat för dig.",
     url: "/vart-utbud",
     siteName: "Elina Wellness",
     images: [
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
       },
     ],
     description:
-      "Vill du komma igång med träning och hälsa? Här hittar du vårt utbud som är anpassade för dig.",
+      "Vill du komma igång med träning och hälsa? Här hittar du vårt utbud som är anpassat för dig.",
   },
 };
 
