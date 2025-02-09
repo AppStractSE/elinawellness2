@@ -14,8 +14,8 @@ const Footer = () => {
           <div className="col-span-2 w-fit">
             <Link href="/" className="relative block h-full w-32 md:w-48">
               <Image
-                className="!relative fill-white text-background invert"
                 quality={100}
+                className="!relative fill-white text-background invert"
                 fill
                 alt="Logo"
                 src="/logo.svg"

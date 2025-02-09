@@ -57,6 +57,7 @@ const MainLinks = ({ currentPath }: MainLinksProps) => {
                       )}
                     >
                       <Image
+                        quality={100}
                         fill
                         priority
                         src={sublink.image || "/placeholder.png"}
@@ -159,6 +160,7 @@ const Drawer = ({ isOpen, setIsOpen }: Props) => {
                 )}
               >
                 <Image
+                  quality={100}
                   fill
                   priority
                   src={serviceLink.image || "/placeholder.png"}

@@ -26,6 +26,7 @@ const ServicesSection = ({ className, showAll }: Props) => {
             <div key={index} className="flex flex-col gap-6">
               <div className="relative aspect-[1.5/1]">
                 <Image
+                  quality={100}
                   fill
                   src={service.image}
                   alt={service.title}

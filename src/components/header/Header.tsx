@@ -21,7 +21,7 @@ const Header = () => {
   const buttonBaseClasses = "px-3 py-2 text-xs font-semibold";
   return (
     <>
-      <header className="sticky top-0 z-50 bg-background/80 text-primary backdrop-blur-md shadow-md">
+      <header className="sticky top-0 z-50 bg-background/80 text-primary shadow-md backdrop-blur-md">
         <div className="max-page-width px-4 py-2.5 md:py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
@@ -31,9 +31,9 @@ const Header = () => {
               <div className="h-6 min-w-[1.5px] bg-primary/50" />
               <Link href="/" className="">
                 <Image
+                  quality={100}
                   width={54}
                   height={54}
-                  quality={100}
                   alt="Logo"
                   src="/logo.svg"
                 />

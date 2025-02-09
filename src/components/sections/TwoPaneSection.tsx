@@ -30,6 +30,7 @@ const TwoPaneSection = ({
         {image && (
           <div>
             <Image
+              quality={100}
               src={image}
               alt=""
               height={1080}
@@ -42,6 +43,7 @@ const TwoPaneSection = ({
           <div className="grid grid-cols-2 gap-2">
             {images.map((image, index) => (
               <Image
+                quality={100}
                 key={index}
                 src={image}
                 alt=""

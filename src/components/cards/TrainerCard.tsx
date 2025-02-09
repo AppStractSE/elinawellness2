@@ -19,8 +19,8 @@ const TrainerCard = ({
     <div className="flex flex-col gap-4">
       <div className="h-full w-full">
         <Image
-          priority
           quality={100}
+          priority
           src={image}
           fill
           alt="Trainer image"
