@@ -223,11 +223,11 @@ const ContactForm = () => {
             {errors.Message?.message}
           </p>
         </div>
-        
+
         <button
           disabled={isSubmitting || formSubmitted}
           type="submit"
-          className="flex w-full items-center justify-center rounded-md bg-primary p-4 text-center text-base leading-normal tracking-[0.15em] text-background outline outline-1 transition-all duration-200 ease-in-out hover:bg-accent"
+          className="ring-1 ring-background inline-flex w-full items-center justify-center rounded-md bg-primary/90 px-4 py-4 text-background backdrop-blur-sm hover:bg-primary"
         >
           {isSubmitting ? (
             <Spinner

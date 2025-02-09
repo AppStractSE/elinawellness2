@@ -30,8 +30,8 @@ const Footer = () => {
               <Link className="w-fit hover:underline" href="/kom-igang">
                 Kom igång
               </Link>
-              <Link className="w-fit hover:underline" href="/vara-tjanster">
-                Våra tjänster
+              <Link className="w-fit hover:underline" href="/vart-utbud">
+                Vårt utbud
               </Link>
             </div>
           </div>

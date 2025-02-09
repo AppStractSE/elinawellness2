@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 import { twMerge } from "tailwind-merge";
+import Button from "../buttons/Button";
 
 interface Props {
   image?: string;
@@ -66,13 +66,12 @@ const TwoPaneSection = ({
           </p>
           <div>
             {button && (
-              <Link
+              <Button
                 href={button.href}
-                className="flex w-fit items-center gap-2 hover:underline"
-              >
-                <span>{button.text}</span>
-                <ArrowRight size={18} />
-              </Link>
+                text={button.text}
+                icon={<ArrowRight size={18} />}
+                className="border border-primary bg-inherit text-primary hover:border-transparent hover:bg-primary/90 hover:text-background"
+              />
             )}
           </div>
         </div>

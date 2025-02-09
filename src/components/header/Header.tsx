@@ -21,7 +21,7 @@ const Header = () => {
   const buttonBaseClasses = "px-3 py-2 text-xs font-semibold";
   return (
     <>
-      <header className="sticky top-0 z-50 bg-background/80 text-primary backdrop-blur-md">
+      <header className="sticky top-0 z-50 bg-background/80 text-primary backdrop-blur-md shadow-md">
         <div className="max-page-width px-4 py-2.5 md:py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
@@ -47,10 +47,10 @@ const Header = () => {
                 Om oss
               </Link>
               <Link
-                href="/vara-tjanster"
+                href="/vart-utbud"
                 className={twMerge(buttonBaseClasses, "hidden sm:block")}
               >
-                Våra tjänster
+                Vårt utbud
               </Link>
               <Link
                 href="/kom-igang"

@@ -147,7 +147,7 @@ const Drawer = ({ isOpen, setIsOpen }: Props) => {
           <MainLinks currentPath={pathname} />
           <hr className="border-primary/25" />
           <h6 className="text-base font-semibold tracking-wide text-black">
-            Upptäck våra tjänster
+            Upptäck vårt utbud
           </h6>
           <div className="grid grid-cols-2 gap-2">
             {serviceLinks.map((serviceLink) => (
@@ -167,7 +167,7 @@ const Drawer = ({ isOpen, setIsOpen }: Props) => {
                 />
                 <div className="absolute inset-0 bg-black/40 transition-all duration-1000 ease-in-out group-hover:bg-black/10">
                   <div className="flex h-full w-full items-center justify-center">
-                    <div className="text-sm text-center text-background md:text-base p-2">
+                    <div className="p-2 text-center text-sm text-background md:text-base">
                       {serviceLink.label}
                     </div>
                   </div>

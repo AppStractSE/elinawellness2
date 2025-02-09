@@ -12,14 +12,14 @@ const mainLinks: DrawerLink[] = [
   { href: "/", label: "Hem" },
   { href: "/om-oss", label: "Om oss" },
   {
-    href: "/vara-tjanster",
-    label: "Våra tjänster",
+    href: "/vart-utbud",
+    label: "Vårt utbud",
   },
   { href: "/kom-igang", label: "Kom igång" },
 ];
 
 const serviceLinks = content.services.map((service) => ({
-  href: `/vara-tjanster/${service.id}`,
+  href: `/vart-utbud/${service.id}`,
   label: service.title,
   image: service.image,
 }));

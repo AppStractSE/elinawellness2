@@ -4,10 +4,9 @@ import ContactSection from "@/components/sections/ContactSection";
 import FAQSection from "@/components/sections/FAQSection";
 import HeroSection from "@/components/sections/HeroSection";
 import ReviewSection from "@/components/sections/ReviewSection";
-import TitleWithContentSection from "@/components/sections/TitleWithContentSection";
+import ServicesSection from "@/components/sections/ServicesSection";
 import TrainersSection from "@/components/sections/TrainersSection";
 import TwoPaneSection from "@/components/sections/TwoPaneSection";
-import Services from "@/components/services/Services";
 
 export default function Home() {
   return (
@@ -26,12 +25,7 @@ export default function Home() {
       />
       <ReviewSection />
       <TrainersSection />
-      <TitleWithContentSection
-        title="Vad vi erbjuder"
-        text={`Alla våra träningsprogram är unikt anpassade för att passa dig, din kropp och livspussel. Vi erbjuder alltid personlig guidning för att optimera din väg mot en hälsosammare livsstil.`}
-      >
-        <Services />
-      </TitleWithContentSection>
+      <ServicesSection showAll />
       <CenteredSection
         image="/ready-for-change.webp"
         title="Redo för förändring?"

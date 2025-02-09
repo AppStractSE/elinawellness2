@@ -2,9 +2,9 @@
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import { ArrowRight, MoveLeft, MoveRight } from "lucide-react";
-import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { twMerge } from "tailwind-merge";
+import Button from "../buttons/Button";
 
 const ReviewSection = () => {
   const quotes = [
@@ -74,15 +74,12 @@ const ReviewSection = () => {
             en hälsosammare livsstil! Här är några ord från våra klienter.
           </p>
 
-          <div>
-            <Link
-              href="/"
-              className="flex w-fit items-center gap-2 hover:underline"
-            >
-              <span>Kom igång du med!</span>
-              <ArrowRight size={18} />
-            </Link>
-          </div>
+          <Button
+            href="/kom-igang"
+            text="Kom igång du med!"
+            icon={<ArrowRight size={18} />}
+            className="border border-background bg-inherit text-background hover:border-transparent hover:bg-background hover:text-primary/90"
+          />
         </div>
         <div className="flex flex-col gap-4 md:gap-8">
           <div className="flex items-center justify-end gap-4">

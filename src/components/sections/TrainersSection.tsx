@@ -1,8 +1,13 @@
+import { twMerge } from "tailwind-merge";
 import TrainerCard from "../cards/TrainerCard";
 
-const TrainersSection = () => {
+interface Props {
+  className?: string;
+}
+
+const TrainersSection = ({ className }: Props) => {
   return (
-    <section className="bg-white">
+    <section className={twMerge("bg-white", className)}>
       <div className="max-page-width flex flex-col gap-8 px-4 py-12 md:gap-12 md:py-24">
         <h2 className="text-balance text-center text-3xl font-semibold tracking-wide sm:text-4xl md:text-5xl">
           Det här är Elina Wellness

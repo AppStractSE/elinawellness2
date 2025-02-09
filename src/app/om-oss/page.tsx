@@ -1,3 +1,7 @@
+import ContactSection from "@/components/sections/ContactSection";
+import ServicesSection from "@/components/sections/ServicesSection";
+import SubPageHeroSection from "@/components/sections/SubPageHeroSection";
+import TrainersSection from "@/components/sections/TrainersSection";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -6,5 +10,16 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <></>;
+  return (
+    <>
+      <SubPageHeroSection
+        className="border-b bg-white"
+        title="Två systrar med en passion för hälsa"
+        text="Vi är två systrar som brinner för hälsa och träning. Vi har båda en bakgrund inom idrott och hälsa och har en passion för att hjälpa andra att uppnå sina mål."
+      />
+      <TrainersSection className="bg-white" />
+      <ServicesSection className="bg-background" />
+      <ContactSection className="bg-white" />
+    </>
+  );
 }

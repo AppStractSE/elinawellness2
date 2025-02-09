@@ -1,4 +1,5 @@
 import ContactSection from "@/components/sections/ContactSection";
+import SubPageHeroSection from "@/components/sections/SubPageHeroSection";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -7,5 +8,15 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <ContactSection />;
+  return (
+    <>
+      <SubPageHeroSection
+        image=""
+        title="Kom igång"
+        text="Är du redo för en förändring? Låt oss komma igång redan idag!"
+        className="border-b bg-white"
+      />
+      <ContactSection />
+    </>
+  );
 }
