@@ -24,7 +24,7 @@ const ServicesSection = ({ className, showAll }: Props) => {
         <div className="mt-4 grid w-full grid-cols-1 gap-x-4 gap-y-12 md:grid-cols-2">
           {content.services.map((service, index) => (
             <div key={index} className="flex flex-col gap-6">
-              <div className="relative aspect-[1.5/1]">
+              <div className="relative aspect-[2/1] md:aspect-[1.75/1]">
                 <Image
                   quality={100}
                   fill

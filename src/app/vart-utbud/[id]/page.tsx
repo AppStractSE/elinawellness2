@@ -27,7 +27,7 @@ export default function Page({ params }: any) {
         }}
         title={service.title}
         text={service.description}
-        className="border-b bg-white"
+        className="bg-white"
       />
       <section>
         <div className="mx-auto max-w-screen-md justify-center px-4 py-12 md:py-24">
@@ -64,7 +64,7 @@ export default function Page({ params }: any) {
         </div>
       </section>
       <ServicesSection className="bg-white" />
-      <ContactSection className="border-b/50 border-b bg-primary text-background" />
+      <ContactSection className="bg-primary text-background" />
     </>
   );
 }

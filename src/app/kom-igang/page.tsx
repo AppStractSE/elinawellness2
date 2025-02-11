@@ -11,10 +11,10 @@ export default function Page() {
   return (
     <>
       <SubPageHeroSection
-        image=""
+        image="/ready-for-change.webp"
         title="Kom igång"
         text="Är du redo för en förändring? Låt oss komma igång redan idag!"
-        className="border-b bg-white"
+        className="bg-white"
       />
       <ContactSection />
     </>

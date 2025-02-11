@@ -1,18 +1,21 @@
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 import { twMerge } from "tailwind-merge";
 import TrainerCard from "../cards/TrainerCard";
 
 interface Props {
   className?: string;
+  showMoreButton?: boolean;
 }
 
-const TrainersSection = ({ className }: Props) => {
+const TrainersSection = ({ className, showMoreButton }: Props) => {
   return (
     <section className={twMerge("bg-white", className)}>
-      <div className="max-page-width flex flex-col gap-8 px-4 py-12 md:gap-12 md:py-24">
-        <h2 className="text-balance text-center text-3xl font-semibold tracking-wide sm:text-4xl md:text-5xl">
+      <div className="max-page-width flex flex-col items-center gap-8 px-4 py-12 md:gap-12 md:py-24">
+        <h2 className="text-2xl font-semibold tracking-wide sm:text-3xl md:text-5xl">
           Det här är Elina Wellness
         </h2>
-        <div className="grid grid-cols-1 items-start gap-12 md:grid-cols-2 md:gap-4">
+        <div className="grid grid-cols-1 items-start gap-12 md:grid-cols-2 md:gap-8">
           <TrainerCard
             title="Lina"
             image="/IMG_8625.webp"
@@ -28,6 +31,15 @@ const TrainersSection = ({ className }: Props) => {
             instagram="/"
           />
         </div>
+        {showMoreButton ? (
+          <Link
+            href="/om-oss"
+            className="mt-12 flex w-fit items-center gap-2 font-medium hover:underline"
+          >
+            <span>Läs mer om oss</span>
+            <ArrowRight size={18} />
+          </Link>
+        ) : null}
       </div>
     </section>
   );

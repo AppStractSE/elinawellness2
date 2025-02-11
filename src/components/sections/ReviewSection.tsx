@@ -85,13 +85,13 @@ const ReviewSection = () => {
           <div className="flex items-center justify-end gap-4">
             <div
               onClick={handlePrevEvent}
-              className="hover:cursor-pointer hover:opacity-50"
+              className="md:hover:cursor-pointer md:hover:opacity-50"
             >
               <MoveLeft size={32} />
             </div>
             <div
               onClick={handleNextEvent}
-              className="hover:cursor-pointer hover:opacity-50"
+              className="md:hover:cursor-pointer md:hover:opacity-50"
             >
               <MoveRight size={32} />
             </div>

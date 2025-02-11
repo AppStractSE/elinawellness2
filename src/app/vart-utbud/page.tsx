@@ -43,7 +43,7 @@ export default function Page() {
   return (
     <>
       <SubPageHeroSection
-        className="border-b bg-white"
+        className="bg-white"
         title="Vårt utbud"
         text="Upptäck Elina Wellness utbud och hitta det som passar dig bäst."
       />

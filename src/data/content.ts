@@ -7,7 +7,7 @@ export const content = {
     backgroundColor: "#F1FFEB",
     foregroundColor: "#171717",
     accentColor: "#2EB800",
-    maxPageWidth: "1300px",
+    maxPageWidth: "1460px",
   },
 
   applyTheme(theme: Record<string, string>) {
