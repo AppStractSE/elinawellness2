@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://dev.elinawellness.se'),
   title: {
     template: "%s | Elina Wellness",
-    default: "Elina Wellness | Titel",
+    default: "Förverkliga din sanna potential | Elina Wellness",
   },
   openGraph: {
     title: "Elina Wellness",

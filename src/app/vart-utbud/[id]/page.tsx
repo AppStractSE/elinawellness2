@@ -13,6 +13,45 @@ export async function generateStaticParams() {
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
+export async function generateMetadata({ params }: any) {
+  const service = content.services.find((service) => service.id === params.id);
+  if (!service) redirect("/404");
+  return {
+    title: service.title,
+    openGraph: {
+      title: `Elina Wellness | ${service.title}`,
+      description: service.description,
+      url: `/vart-utbud/${service.id}`,
+      siteName: "Elina Wellness",
+      images: [
+        {
+          url: `/${service.image}`,
+          width: 1200,
+          height: 630,
+          alt: `Elina Wellness | ${service.title}`,
+        },
+      ],
+      locale: "sv_SE",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      site: "@",
+      title: "Elina Wellness",
+      images: [
+        {
+          url: `/${service.image}`,
+          width: 1200,
+          height: 630,
+          alt: `Elina Wellness | ${service.title}`,
+        },
+      ],
+      description: service.description,
+    },
+  };
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function Page({ params }: any) {
   const service = content.services.find((service) => service.id === params.id);
   if (!service) redirect("/404");
