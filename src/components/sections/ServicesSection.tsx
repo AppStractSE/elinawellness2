@@ -23,7 +23,11 @@ const ServicesSection = ({ className, showAll }: Props) => {
         </p>
         <div className="mt-4 grid w-full grid-cols-1 gap-x-4 gap-y-12 md:grid-cols-2">
           {content.services.map((service, index) => (
-            <div key={index} className="flex flex-col gap-6">
+            <Link
+              key={index}
+              href={`vart-utbud/${service.id}`}
+              className="flex flex-col gap-6"
+            >
               <div className="relative aspect-[2/1] md:aspect-[1.75/1]">
                 <Image
                   quality={100}
@@ -41,7 +45,7 @@ const ServicesSection = ({ className, showAll }: Props) => {
                   {service.description}
                 </p>
               </div>
-              <div className="flex items-center gap-4">
+              {/* <div className="flex items-center gap-4">
                 <Button href={`/vart-utbud/${service.id}`} text="Läs mer" />
                 <Button
                   href="/kom-igang"
@@ -49,18 +53,17 @@ const ServicesSection = ({ className, showAll }: Props) => {
                   icon={<ArrowRight size={18} />}
                   className="border border-primary bg-inherit text-primary hover:border-transparent hover:bg-primary/90 hover:text-background"
                 />
-              </div>
-            </div>
+              </div> */}
+            </Link>
           ))}
         </div>
         {showAll ? (
-          <Link
-            href="/vart-utbud"
-            className="mt-12 flex w-fit items-center gap-2 font-medium hover:underline"
-          >
-            <span>Se hela vårt utbud</span>
-            <ArrowRight size={18} />
-          </Link>
+          <Button
+            href="/kom-igang"
+            text="Till anmälan"
+            icon={<ArrowRight size={18} />}
+            className="mt-12 border border-primary bg-inherit text-primary hover:border-transparent hover:bg-primary/90 hover:text-background"
+          />
         ) : null}
       </div>
     </section>

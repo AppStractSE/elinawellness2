@@ -19,14 +19,14 @@ const TrainersSection = ({ className, showMoreButton }: Props) => {
           <TrainerCard
             title="Lina"
             image="/IMG_8625.webp"
-            description={`Lina är utbildad till personlig tränare och fysioterapeut och brinner för en hälsosam livsstil där rörelseglädje står i fokus. Hon fick sin PT-licens år 2019 och är legitimerad fysioterapeut sedan 2020. Förutom att jobba som coach på ElinaWellness jobbar Lina också som fysioterapeut där hon dagligen rehabiliterat patienter som har ont i muskler och leder.`}
+            description={`Lina är utbildad till personlig tränare och fysioterapeut och brinner för en hälsosam livsstil där rörelseglädje står i fokus. Lina har även gått kurser inom mammaträning och har egen erfarenhet av träning under och efter graviditet. Hon fick sin PT-licens år 2019 och är legitimerad fysioterapeut vid Uppsala universitet sedan 2020. Förutom att jobba som coach på ElinaWellness jobbar Lina också som fysioterapeut där hon dagligen rehabiliterat patienter som har ont i muskler och leder.`}
             email="lina@elinawellness.se"
             instagram="/"
           />
           <TrainerCard
             title="Elin"
             image="/IMG_8626.webp"
-            description={`Elin är utbildad inom kostventenskap som kostvetare. Hon tog examen 2018 och har sedan dess jobbat inom hälsobranchen på olika sätt, både som anställd och egenföretagare. Elin brinner för att hjälpa andra till en hållbar och bättre livsstil genom en bra och hälsosamt kost och rörelse. Förutom som coach på ElinaWellness driver Elin eget inom hälsokost och skönhet.`}
+            description={`Elin är utbildad inom kostventenskap som kostvetare vid Uppsala universitet. Hon tog examen 2018 och har sedan dess jobbat inom hälsobranchen på olika sätt, både som anställd och egenföretagare. Elin brinner för att hjälpa andra till en hållbar och bättre livsstil genom en bra och hälsosamt kost och rörelse. Förutom som coach på ElinaWellness driver Elin eget inom hälsokost och skönhet. Elins intresse för kost och hälsa väcktes vid liv när hon som 17-åring fick typ 1-diabetes.`}
             email="elin@elinawellness.se"
             instagram="/"
           />

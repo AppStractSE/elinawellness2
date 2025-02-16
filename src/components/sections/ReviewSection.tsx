@@ -5,6 +5,7 @@ import { ArrowRight, MoveLeft, MoveRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import Button from "../buttons/Button";
+import Script from "next/script";
 
 const ReviewSection = () => {
   const quotes = [
@@ -110,9 +111,9 @@ const ReviewSection = () => {
                       <div className="flex flex-col gap-4 p-4 md:p-12">
                         <p className="text-6xl md:text-7xl">“</p>
                         <p className="text-lg md:text-xl">{quote}</p>
-                        <p className="mt-4 text-base md:mt-8 md:text-lg">
+                        {/* <p className="mt-4 text-base md:mt-8 md:text-lg">
                           - Victor Johansson
-                        </p>
+                        </p> */}
                       </div>
                     </div>
                   </SplideSlide>

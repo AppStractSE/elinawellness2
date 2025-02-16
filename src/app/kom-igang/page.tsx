@@ -42,7 +42,6 @@ export default function Page() {
   return (
     <>
       <SubPageHeroSection
-        image="/ready-for-change.webp"
         title="Kom igång"
         text="Är du redo för en förändring? Låt oss komma igång redan idag!"
         className="bg-white"

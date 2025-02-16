@@ -53,6 +53,12 @@ const Header = () => {
                 Vårt utbud
               </Link>
               <Link
+                href="/priser"
+                className={twMerge(buttonBaseClasses, "hidden sm:block")}
+              >
+                Priser
+              </Link>
+              <Link
                 href="/kom-igang"
                 className={twMerge(
                   buttonBaseClasses,

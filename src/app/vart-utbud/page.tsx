@@ -47,8 +47,8 @@ export default function Page() {
         title="Vårt utbud"
         text="Upptäck Elina Wellness utbud och hitta det som passar dig bäst."
       />
-      <ServicesSection className="bg-white" />
-      <ContactSection />
+      <ServicesSection className="bg-background" />
+      <ContactSection className="bg-white" />
     </>
   );
 }

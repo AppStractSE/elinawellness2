@@ -45,12 +45,11 @@ export default function Page() {
   return (
     <>
       <SubPageHeroSection
-        image="/image006.webp"
         className="bg-white"
         title="Två systrar med en passion för hälsa"
         text="Vi är två systrar som brinner för hälsa och träning. Vi har båda en bakgrund inom idrott och hälsa och har en passion för att hjälpa andra att uppnå sina mål."
       />
-      <TrainersSection className="bg-white" />
+      <TrainersSection className="bg-background" />
       <TwoPaneSection
         button={{
           href: "/vart-utbud/kostradgivning",

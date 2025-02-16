@@ -1,12 +1,5 @@
 import { content } from "@/data/content";
-import {
-  ArrowUpRight,
-  Check,
-  Mail,
-  MapPin,
-  Send,
-  Smartphone,
-} from "lucide-react";
+import { ArrowUpRight, Check, Send } from "lucide-react";
 import ContactForm from "../forms/ContactForm";
 
 interface Props {
@@ -37,8 +30,8 @@ const ContactSection = ({ className }: Props) => {
               content.company.email ||
               content.company.address) && (
               <div className="mt-4 flex flex-col gap-4">
-                <h5 className="text-2xl">{content.contactSection.contact}</h5>
-                <div className="flex flex-col gap-2">
+                {/* <h5 className="text-2xl">{content.contactSection.contact}</h5> */}
+                {/* <div className="flex flex-col gap-2">
                   {content.company.phone && (
                     <p className="w-fit text-lg underline underline-offset-4">
                       <a
@@ -72,7 +65,7 @@ const ContactSection = ({ className }: Props) => {
                       </a>
                     </p>
                   )}
-                </div>
+                </div> */}
                 <div className="mt-4 grid grid-cols-2 items-start justify-between gap-4">
                   <div className="flex flex-col gap-4">
                     <div className="h-full w-full">

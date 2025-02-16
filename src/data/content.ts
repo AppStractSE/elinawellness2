@@ -39,6 +39,7 @@ export const content = {
     description:
       "Vill du komma igång med ett hälsosammare välbefinnande? Vi kan till exempel hjälpa dig med att",
     points: [
+      "Kostrådgivning",
       "Gå ner eller upp i vikt",
       "Uppnå ett specifikt mål, t ex ett lopp eller en tävling",
       "Progressera i din styrketräning eller konditionsträning",
@@ -50,7 +51,7 @@ export const content = {
   services: [
     {
       id: "traeningsupplaegg",
-      title: "Träningsupplägg, 8 veckor",
+      title: "Träningsupplägg",
       secondary_title: "Stärk kroppen med ett genomtänkt program",
       strong_description:
         "Oavsett om du vill bygga muskler, förbättra din kondition eller få en starkare kropp, får du ett anpassat träningsupplägg som ger dig struktur och motivation.",
@@ -66,10 +67,21 @@ export const content = {
         { title: "Uppföljning varje vecka" },
         { title: "Tillgängliga via chatt alla dagar i veckan" },
       ],
+      price: [
+        {
+          title: "1 månad: 900 kr/månad",
+        },
+        {
+          title: "3 månader: 800 kr/månad",
+        },
+        {
+          title: "6 månader: 700 kr/månad",
+        },
+      ],
     },
     {
       id: "kostradgivning",
-      title: "Kostrådgivning, 8 veckor",
+      title: "Kostrådgivning",
       secondary_title: "Hitta en kosthållning som fungerar för dig",
       strong_description:
         "Med individuell rådgivning får du stöd att skapa en balanserad och hållbar kosthållning som passar din livsstil och dina mål.",
@@ -96,10 +108,21 @@ export const content = {
           title: "Tillgängliga via chatt alla dagar i veckan",
         },
       ],
+      price: [
+        {
+          title: "1 månad: 900 kr/månad",
+        },
+        {
+          title: "3 månader: 800 kr/månad",
+        },
+        {
+          title: "6 månader: 700 kr/månad",
+        },
+      ],
     },
     {
       id: "kost-och-traeningsupplaegg",
-      title: "Kost- och träningsupplägg, 8 veckor",
+      title: "Kost- och träningsupplägg",
       secondary_title: "En balanserad väg till dina mål",
       strong_description:
         "Få ett individanpassat upplägg där kost och träning samverkar för att optimera dina resultat. Vi tar hänsyn till dina förutsättningar och mål för att skapa en hållbar livsstil.",
@@ -129,6 +152,17 @@ export const content = {
             "Tillgänglighet: Vi finns här för dig - chattsupport alla dagar i veckan.",
         },
       ],
+      price: [
+        {
+          title: "1 månad: 2200 kr/månad",
+        },
+        {
+          title: "3 månader: 2000 kr/månad",
+        },
+        {
+          title: "6 månader 1800 kr/månad",
+        },
+      ],
     },
     {
       id: "kostradgivarsamtal",
@@ -150,6 +184,11 @@ export const content = {
         {
           title:
             "Möjlighet till uppföljande samtal för att justera planen efter dina framsteg.",
+        },
+      ],
+      price: [
+        {
+          title: "1 timme: 495 kr",
         },
       ],
     },
