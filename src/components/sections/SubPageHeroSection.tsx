@@ -1,32 +1,45 @@
-import Link from "next/link";
+import Image from "next/image";
+import Button from "../buttons/Button";
 
 interface Props {
   title: string;
-  text: string;
+  text?: string;
+  image?: string;
   button?: {
     href: string;
     text: string;
   };
+  className?: string;
 }
 
-const SubPageHeroSection = ({ title, text, button }: Props) => {
+const SubPageHeroSection = ({
+  title,
+  text,
+  button,
+  image,
+  className,
+}: Props) => {
   return (
-    <section>
-      <div className="max-page-width my-24 flex flex-col items-center justify-center gap-8 px-4 py-12 md:gap-12 md:py-24">
-        <h2 className="whitespace-pre-line text-balance text-center text-4xl font-medium sm:text-5xl md:text-6xl">
+    <section className={className}>
+      <div className="max-page-width flex flex-col items-center justify-center gap-8 px-4 py-12 md:gap-12 md:py-24">
+        <h2 className="max-w-screen-lg hyphens-auto whitespace-pre-line text-balance break-words text-center text-4xl font-medium sm:text-5xl md:text-6xl">
           {title}
         </h2>
-        <p className="max-w-3xl text-balance text-center text-lg leading-loose tracking-wider md:text-xl lg:text-2xl">
+        {image ? (
+          <Image
+            quality={100}
+            fill
+            alt={title}
+            src={image}
+            className="!relative aspect-[1.75/1] h-auto w-full rounded-xl object-cover object-center"
+          />
+        ) : null}
+        <p className="max-w-3xl text-balance text-center text-lg leading-loose tracking-wider md:text-xl">
           {text}
         </p>
-        {button && (
-          <Link
-            href={button.href}
-            className="flex w-fit items-center justify-center rounded-full bg-primary/90 px-6 py-2.5 text-background hover:bg-primary"
-          >
-            <span>{button.text}</span>
-          </Link>
-        )}
+        {button ? (
+          <Button href="/kom-igang" text="Till anmälan" className="text-lg" />
+        ) : null}
       </div>
     </section>
   );

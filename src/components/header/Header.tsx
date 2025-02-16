@@ -2,17 +2,26 @@
 import { MenuIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import Drawer from "../drawer/Drawer";
 
 const Header = () => {
-  const ICON_SIZE = 24;
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const ICON_SIZE = 24;
+  const pathname = usePathname();
+  useEffect(() => {
+    setIsDrawerOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    setIsDrawerOpen(false);
+  }, [pathname]);
   const buttonBaseClasses = "px-3 py-2 text-xs font-semibold";
   return (
     <>
-      <header className="sticky top-0 z-50 bg-background/80 text-primary backdrop-blur-md">
+      <header className="sticky top-0 z-50 bg-background/80 text-primary shadow-md backdrop-blur-md">
         <div className="max-page-width px-4 py-2.5 md:py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
@@ -22,9 +31,9 @@ const Header = () => {
               <div className="h-6 min-w-[1.5px] bg-primary/50" />
               <Link href="/" className="">
                 <Image
+                  quality={100}
                   width={54}
                   height={54}
-                  quality={100}
                   alt="Logo"
                   src="/logo.svg"
                 />
@@ -38,19 +47,25 @@ const Header = () => {
                 Om oss
               </Link>
               <Link
-                href="/vara-tjanster"
+                href="/vart-utbud"
                 className={twMerge(buttonBaseClasses, "hidden sm:block")}
               >
-                Våra tjänster
+                Vårt utbud
               </Link>
               <Link
-                href="/kontakt"
+                href="/priser"
+                className={twMerge(buttonBaseClasses, "hidden sm:block")}
+              >
+                Priser
+              </Link>
+              <Link
+                href="/kom-igang"
                 className={twMerge(
                   buttonBaseClasses,
                   "rounded-full bg-accent/90 hover:bg-accent",
                 )}
               >
-                Kontakt
+                Kom igång
               </Link>
             </div>
           </div>

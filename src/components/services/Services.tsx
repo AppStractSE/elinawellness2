@@ -38,6 +38,7 @@ const FullwidthCarousel = () => {
                 <div className="max-page-width grid grid-cols-1 items-center gap-8 px-4 md:grid-cols-2 lg:gap-24">
                   <div className="relative aspect-video w-full max-w-full md:aspect-square">
                     <Image
+                      quality={100}
                       src={service.image}
                       alt=""
                       fill

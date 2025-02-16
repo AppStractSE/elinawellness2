@@ -88,6 +88,7 @@ const ClientsSection = () => {
                     <div className="max-page-width">
                       <div className="relative aspect-square w-full max-w-full">
                         <Image
+                          quality={100}
                           src="/before-after001.webp"
                           alt=""
                           fill

@@ -1,12 +1,5 @@
 import { content } from "@/data/content";
-import {
-  ArrowUpRight,
-  Check,
-  Mail,
-  MapPin,
-  Send,
-  Smartphone,
-} from "lucide-react";
+import { ArrowUpRight, Check, Send } from "lucide-react";
 import ContactForm from "../forms/ContactForm";
 
 interface Props {
@@ -18,14 +11,14 @@ const ContactSection = ({ className }: Props) => {
     <section className={className}>
       <div className="max-page-width flex justify-center px-4 py-12 md:py-24">
         <div className="flex w-full flex-col justify-between gap-12 md:flex-row md:gap-8">
-          <div className="flex flex-col gap-4 md:max-w-[32rem]">
+          <div className="flex flex-col gap-4 md:max-w-[32rem] md:gap-8">
             <h2 className="text-3xl font-medium tracking-wider sm:text-4xl md:text-5xl">
               {content.contactSection.title}
             </h2>
-            <p className="text-balance text-2xl">
-              {content.contactSection.description}
-            </p>
             <div className="mt-4 flex flex-col gap-4">
+              <p className="text-balance md:text-xl">
+                {content.contactSection.description}
+              </p>
               {content.contactSection.points.map((point, index) => (
                 <div key={index} className="flex items-center gap-2">
                   <Check size={20} className="min-h-[20px] min-w-[20px]" />
@@ -37,8 +30,8 @@ const ContactSection = ({ className }: Props) => {
               content.company.email ||
               content.company.address) && (
               <div className="mt-4 flex flex-col gap-4">
-                <h5 className="text-2xl">{content.contactSection.contact}</h5>
-                <div className="flex flex-col gap-2">
+                {/* <h5 className="text-2xl">{content.contactSection.contact}</h5> */}
+                {/* <div className="flex flex-col gap-2">
                   {content.company.phone && (
                     <p className="w-fit text-lg underline underline-offset-4">
                       <a
@@ -72,7 +65,7 @@ const ContactSection = ({ className }: Props) => {
                       </a>
                     </p>
                   )}
-                </div>
+                </div> */}
                 <div className="mt-4 grid grid-cols-2 items-start justify-between gap-4">
                   <div className="flex flex-col gap-4">
                     <div className="h-full w-full">

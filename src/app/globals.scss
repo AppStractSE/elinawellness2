@@ -8,7 +8,7 @@
   --background-color: 253 250 239;
   --foreground-color: 23 23 23;
   --accent-color: 46 184 0;
-  --max-page-width: 1536px;
+  --max-page-width: 1460px;
   --border-radius-button: 4px;
   --border-radius-general: 0.5rem;
 }
@@ -66,4 +66,53 @@ body::-webkit-scrollbar {
   fill: transparent !important;
   height: auto !important;
   width: auto !important;
+}
+
+.custom__pagination {
+  @apply justify-start relative #{!important};
+
+  .splide__pagination__page.is-active {
+    @apply bg-background #{!important};
+  }
+
+  .splide__pagination__page {
+    @apply bg-background/40 opacity-100 #{!important};
+  }
+}
+
+.splide__progress {
+  @apply mx-auto w-full rounded-sm overflow-hidden h-1 bg-background/30 #{!important};
+}
+
+.splide__progress__bar {
+  @apply bg-background h-1 #{!important};
+}
+
+main {
+  @apply divide-y;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(1rem);
+  }
+
+  100% {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+section {
+  animation: fadeIn 1s;
+  animation-fill-mode: both;
+}
+
+@for $i from 1 through 50 {
+  section:nth-of-type(#{$i}) {
+    animation-delay: $i * 0.25s;
+  }
 }

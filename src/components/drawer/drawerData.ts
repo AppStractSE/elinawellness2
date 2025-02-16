@@ -4,6 +4,7 @@ export interface DrawerLink {
   href: string;
   label: string;
   externalLink?: boolean;
+  image?: string;
   sublinks?: DrawerLink[];
 }
 
@@ -11,14 +12,17 @@ const mainLinks: DrawerLink[] = [
   { href: "/", label: "Hem" },
   { href: "/om-oss", label: "Om oss" },
   {
-    href: "/vara-tjanster",
-    label: "Våra tjänster",
-    sublinks: content.services.map((service) => ({
-      href: `/vara-tjanster/${service.id}`,
-      label: service.title,
-    })),
+    href: "/vart-utbud",
+    label: "Vårt utbud",
   },
-  { href: "/kontakt", label: "Kontakt" },
+  { href: "/priser", label: "Priser" },
+  { href: "/kom-igang", label: "Kom igång" },
 ];
 
-export { mainLinks };
+const serviceLinks = content.services.map((service) => ({
+  href: `/vart-utbud/${service.id}`,
+  label: service.title,
+  image: service.image,
+}));
+
+export { mainLinks, serviceLinks };

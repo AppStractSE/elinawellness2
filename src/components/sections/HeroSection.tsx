@@ -10,7 +10,7 @@ const HeroSection = () => {
         backgroundPosition: "50% 25%",
       }}
     >
-      <div className="relative flex min-h-[120vh] flex-col justify-end border-b border-primary/50">
+      <div className="relative flex min-h-[130svh] flex-col justify-end border-b border-primary/50">
         <div className="absolute inset-0 bg-black/50"></div>
         <div className="max-hero-width relative z-10 w-full px-4 py-12 lg:gap-8 lg:py-24 xl:py-32">
           <div className="flex flex-col gap-6 md:w-1/2">

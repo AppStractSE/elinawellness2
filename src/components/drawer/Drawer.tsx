@@ -2,12 +2,12 @@
 import { content } from "@/data/content";
 import { socials } from "@/data/socials";
 import { ArrowUpRight, X } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
-import { DrawerLink, mainLinks } from "./drawerData";
-
+import { DrawerLink, mainLinks, serviceLinks } from "./drawerData";
 interface Props {
   isOpen: boolean;
   setIsOpen: (isOpen: boolean) => void;
@@ -29,10 +29,8 @@ const MainLinks = ({ currentPath }: MainLinksProps) => {
         const baseClassNames =
           " block transition-all duration-100 ease-in-out flex items-center hover:text-secondary hover:underline hover:text-primary/50 hover:underline-offset-4";
 
-        const {
-          isActiveClassNames: mainActiveClass,
-          activeLinkDot: mainLinkDot,
-        } = isActiveLink(isMainActive);
+        const { isActiveClassNames: mainActiveClass } =
+          isActiveLink(isMainActive);
 
         return (
           <React.Fragment key={mainLink.label}>
@@ -40,16 +38,13 @@ const MainLinks = ({ currentPath }: MainLinksProps) => {
               href={mainLink.href}
               className={twMerge(baseClassNames, mainActiveClass)}
             >
-              <div className={mainLinkDot}></div>
               <span>{mainLink.label}</span>
             </Link>
             {mainLink.sublinks && (
-              <div className="flex flex-col gap-2 pl-6">
+              <div className="grid grid-cols-2 gap-2">
                 {mainLink.sublinks.map((sublink) => {
-                  const {
-                    isActiveClassNames: sublinkActiveClass,
-                    activeLinkDot: sublinkDot,
-                  } = isActiveLink(isSublinkActive(sublink.href));
+                  const { isActiveClassNames: sublinkActiveClass } =
+                    isActiveLink(isSublinkActive(sublink.href));
 
                   return (
                     <Link
@@ -58,11 +53,24 @@ const MainLinks = ({ currentPath }: MainLinksProps) => {
                       className={twMerge(
                         baseClassNames,
                         sublinkActiveClass,
-                        "text-sm",
+                        "group relative block overflow-hidden rounded-md text-sm",
                       )}
                     >
-                      <div className={twMerge(sublinkDot, "h-1.5 w-1.5")}></div>
-                      <span>{sublink.label}</span>
+                      <Image
+                        quality={100}
+                        fill
+                        priority
+                        src={sublink.image || "/placeholder.png"}
+                        alt={sublink.label}
+                        className="!relative aspect-square w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-black/50">
+                        <div className="flex h-full w-full items-center justify-center">
+                          <div className="text-center text-base text-background">
+                            {sublink.label}
+                          </div>
+                        </div>
+                      </div>
                     </Link>
                   );
                 })}
@@ -76,15 +84,10 @@ const MainLinks = ({ currentPath }: MainLinksProps) => {
 };
 
 function isActiveLink(isActive: boolean) {
-  const activeLinkDot = twMerge(
-    "w-2 h-2 bg-secondary transform rounded-full transition-all duration-500 ease-in-out -translate-x-2 transform",
-    isActive ? "opacity-100" : "opacity-0",
-  );
-
   const isActiveClassNames = isActive
-    ? "text-secondary underline underline-offset-4 gap-4 translate-x-4 transform"
+    ? "text-secondary underline underline-offset-4 gap-4"
     : "";
-  return { isActiveClassNames, activeLinkDot };
+  return { isActiveClassNames };
 }
 
 const Drawer = ({ isOpen, setIsOpen }: Props) => {
@@ -141,10 +144,42 @@ const Drawer = ({ isOpen, setIsOpen }: Props) => {
               <X size={28} />
             </button>
           </div>
+          <hr className="border-primary/25" />
           <MainLinks currentPath={pathname} />
           <hr className="border-primary/25" />
+          <h6 className="text-base font-semibold tracking-wide text-black">
+            Upptäck vårt utbud
+          </h6>
+          <div className="grid grid-cols-2 gap-2">
+            {serviceLinks.map((serviceLink) => (
+              <Link
+                key={serviceLink.label}
+                href={serviceLink.href}
+                className={twMerge(
+                  "group relative block overflow-hidden rounded-md",
+                )}
+              >
+                <Image
+                  quality={100}
+                  fill
+                  priority
+                  src={serviceLink.image || "/placeholder.png"}
+                  alt={serviceLink.label}
+                  className="!relative aspect-square w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black/40 transition-all duration-1000 ease-in-out group-hover:bg-black/10">
+                  <div className="flex h-full w-full items-center justify-center">
+                    <div className="p-2 text-center text-sm text-background md:text-base">
+                      {serviceLink.label}
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <hr className="border-primary/25" />
           <div className="flex flex-col gap-4">
-            <h6 className="text-base font-bold tracking-wide text-black">
+            <h6 className="text-base font-semibold tracking-wide text-black">
               {content.followUs}
             </h6>
             <div className="flex flex-col gap-4">
