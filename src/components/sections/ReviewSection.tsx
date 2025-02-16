@@ -5,7 +5,6 @@ import { ArrowRight, MoveLeft, MoveRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import Button from "../buttons/Button";
-import Script from "next/script";
 
 const ReviewSection = () => {
   const quotes = [
