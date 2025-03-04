@@ -11,11 +11,9 @@ interface Props {
 
 const CenteredSection = ({ title, text, button }: Props) => {
   return (
-    <section className="bg-white"
-    >
-      {/* <div className="absolute inset-0 bg-black/25" /> */}
+    <section className="bg-white">
       <div className="max-page-width relative flex flex-col items-center justify-center gap-8 px-4 py-8 md:gap-12 md:py-24 lg:py-48">
-        <h2 className="max-w-3xl whitespace-pre-line text-balance text-center text-4xl font-medium sm:text-5xl md:text-6xl">
+        <h2 className="max-w-3xl whitespace-pre-line text-balance text-center text-2xl font-medium sm:text-3xl md:text-4xl">
           {title}
         </h2>
         <p className="max-w-3xl text-balance text-center text-lg leading-loose tracking-wider md:text-xl lg:text-2xl">

@@ -12,7 +12,7 @@ const ContactSection = ({ className }: Props) => {
       <div className="max-page-width flex justify-center px-4 py-12 md:py-24">
         <div className="flex w-full flex-col justify-between gap-12 md:flex-row md:gap-8">
           <div className="flex flex-col gap-4 md:max-w-[32rem] md:gap-8">
-            <h2 className="text-3xl font-medium tracking-wider sm:text-4xl md:text-5xl">
+            <h2 className="text-2xl font-medium sm:text-3xl md:text-4xl">
               {content.contactSection.title}
             </h2>
             <div className="mt-4 flex flex-col gap-4">

@@ -66,7 +66,7 @@ const ReviewSection = () => {
     <section className="bg-primary text-background">
       <div className="max-page-width grid grid-cols-1 gap-8 px-4 py-12 md:grid-cols-2 md:gap-24 md:py-24">
         <div className={twMerge("flex w-full flex-1 flex-col gap-4 md:gap-8")}>
-          <h2 className="text-3xl font-semibold tracking-wide sm:text-4xl md:text-5xl">
+          <h2 className="text-2xl font-medium sm:text-3xl md:text-4xl">
             Vad våra klienter har att säga
           </h2>
           <p className="whitespace-pre-line leading-relaxed tracking-wider">

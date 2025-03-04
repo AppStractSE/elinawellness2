@@ -64,7 +64,7 @@ const ClientsSection = () => {
             "max-page-width flex flex-col items-center justify-center gap-4 px-4 text-center md:gap-8",
           )}
         >
-          <h2 className="text-3xl font-medium tracking-wider sm:text-4xl md:text-5xl">
+          <h2 className="text-2xl font-medium sm:text-3xl md:text-4xl">
             Våra klienters fantastiska resultat
           </h2>
           <p className="whitespace-pre-line text-balance leading-relaxed tracking-wider md:w-1/2">
