@@ -56,7 +56,7 @@ export default function Page() {
           text: "Läs mer om kostrådgivning",
         }}
         className="bg-white"
-        image="/118.JPG"
+        image="/118.webp"
         title="Hållbar viktbalansering"
         text={`Vi hjälper dig att nå din målvikt utan strikta dieter eller snabba lösningar. Fokus ligger på långsiktiga vanor anpassade efter din vardag.\n\nMed rätt balans av kost, rörelse och återhämtning skapar vi en hållbar plan som ger dig energi, välmående och resultat som varar.`}
       />
