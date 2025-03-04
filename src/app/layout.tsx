@@ -12,7 +12,7 @@ const DMSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://dev.elinawellness.se'),
+  metadataBase: new URL('https://elinawellness.se'),
   title: {
     template: "%s | Elina Wellness",
     default: "Förverkliga din sanna potential | Elina Wellness",

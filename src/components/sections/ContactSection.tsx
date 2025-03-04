@@ -78,7 +78,7 @@ const ContactSection = ({ className }: Props) => {
                       Lina
                     </h2>
                     <a
-                      href="/"
+                      href="https://www.instagram.com/linaelsajohansson/"
                       target="_blank"
                       rel="noreferrer"
                       className="flex w-fit items-center gap-2 font-medium hover:underline"
@@ -107,7 +107,7 @@ const ContactSection = ({ className }: Props) => {
                       Elin
                     </h2>
                     <a
-                      href="/"
+                      href="https://www.instagram.com/ellinjohansson/"
                       target="_blank"
                       rel="noreferrer"
                       className="flex w-fit items-center gap-2 font-medium hover:underline"

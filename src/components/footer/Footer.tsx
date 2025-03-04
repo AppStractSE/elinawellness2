@@ -23,14 +23,32 @@ const Footer = () => {
             </Link>
           </div>
           <div className="flex min-w-fit flex-col gap-4">
-            <div className="flex flex-col gap-2 text-xl font-light md:text-3xl">
-              <Link className="w-fit hover:underline" href="/om-oss">
+            <div className="flex flex-col gap-2">
+              <h5 className="text-base font-semibold md:text-lg">
+                Snabblänkar
+              </h5>
+              <Link
+                className="w-fit text-xl font-light hover:underline md:text-3xl"
+                href="/om-oss"
+              >
                 Om oss
               </Link>
-              <Link className="w-fit hover:underline" href="/kom-igang">
+              <Link
+                className="w-fit text-xl font-light hover:underline md:text-3xl"
+                href="/kom-igang"
+              >
                 Kom igång
               </Link>
-              <Link className="w-fit hover:underline" href="/vart-utbud">
+              <Link
+                className="w-fit text-xl font-light hover:underline md:text-3xl"
+                href="/priser"
+              >
+                Priser
+              </Link>
+              <Link
+                className="w-fit text-xl font-light hover:underline md:text-3xl"
+                href="/vart-utbud"
+              >
                 Vårt utbud
               </Link>
             </div>
