@@ -19,7 +19,7 @@ interface MainLinksProps {
 
 const MainLinks = ({ currentPath }: MainLinksProps) => {
   return (
-    <nav className="flex flex-col gap-4 text-2xl font-semibold tracking-widest md:text-3xl">
+    <nav className="flex flex-col gap-4 text-2xl font-medium tracking-widest md:text-3xl">
       {mainLinks.map((mainLink: DrawerLink) => {
         const isHome = mainLink.href === "/" && currentPath === `/`;
         const isMainActive = isHome || currentPath === mainLink.href;
@@ -126,17 +126,18 @@ const Drawer = ({ isOpen, setIsOpen }: Props) => {
         />
         <div
           className={twMerge(
-            "absolute left-0 top-0 flex h-full w-screen max-w-screen-sm transform flex-col space-y-8 overflow-auto bg-background px-4 py-4 shadow-xl transition-all duration-500 ease-in-out md:border-r md:px-12 md:py-12 lg:bg-opacity-90 lg:py-24",
+            "absolute left-0 top-0 flex h-full w-screen max-w-screen-sm transform flex-col space-y-8 overflow-auto bg-background px-4 py-4 shadow-xl transition-all duration-500 ease-in-out md:border-r md:px-12 md:py-12 lg:bg-opacity-90",
             isOpen ? "translate-x-0" : "-translate-x-full",
           )}
         >
           <div className="flex items-center justify-between">
-            <Link
-              href="/"
-              className={twMerge("text-2xl font-bold tracking-wider")}
-            >
-              {content.company.name}
-            </Link>
+            <Image
+              quality={100}
+              width={92}
+              height={92}
+              alt="Logo"
+              src="/logo.svg"
+            />
             <button
               onClick={handleToggle}
               className="rounded-full border border-primary p-1"
@@ -147,7 +148,7 @@ const Drawer = ({ isOpen, setIsOpen }: Props) => {
           <hr className="border-primary/25" />
           <MainLinks currentPath={pathname} />
           <hr className="border-primary/25" />
-          <h6 className="text-base font-semibold tracking-wide text-black">
+          <h6 className="text-base font-medium tracking-wide text-black">
             Upptäck vårt utbud
           </h6>
           <div className="grid grid-cols-2 gap-2">
@@ -179,7 +180,7 @@ const Drawer = ({ isOpen, setIsOpen }: Props) => {
           </div>
           <hr className="border-primary/25" />
           <div className="flex flex-col gap-4">
-            <h6 className="text-base font-semibold tracking-wide text-black">
+            <h6 className="text-base font-medium tracking-wide text-black">
               {content.followUs}
             </h6>
             <div className="flex flex-col gap-4">
