@@ -6,7 +6,7 @@ const HeroSection = () => {
     <section
       className="bg-cover bg-no-repeat"
       style={{
-        backgroundImage: "url(/IMG_6980.JPG)",
+        backgroundImage: "url(/IMG_6980.webp)",
         backgroundPosition: "50% 25%",
       }}
     >
