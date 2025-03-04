@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     siteName: "Elina Wellness",
     images: [
       {
-        url: "/ready-for-change.webp",
+        url: "/image006.webp",
         width: 1200,
         height: 630,
         alt: "Elina Wellness | Kom igång",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     title: "Elina Wellness",
     images: [
       {
-        url: "/ready-for-change.webp",
+        url: "/image006.webp",
         width: 1200,
         height: 630,
         alt: "Elina Wellness - Kom igång",

@@ -29,15 +29,6 @@ export default function Home() {
       <ReviewSection />
       <TrainersSection showMoreButton />
       <ServicesSection showAll />
-      {/* <CenteredSection
-        // image="/ready-for-change.webp"
-        title="Redo för förändring?"
-        button={{
-          href: "/kom-igang",
-          text: "Jag är redo!",
-        }}
-        text="Låt oss komma igång redan idag!"
-      /> */}
       <ContactSection className="bg-white" />
       <FAQSection className="bg-background" />
     </>
