@@ -28,7 +28,7 @@ const TrainerCard = ({
         />
       </div>
       <div className="flex flex-col gap-4 px-2.5">
-        <h2 className="mt-4 text-2xl font-medium tracking-wider sm:text-3xl md:text-4xl">
+        <h2 className="mt-4 text-xl font-medium sm:text-2xl md:text-3xl">
           {title}
         </h2>
         <p className="whitespace-pre-line leading-relaxed tracking-wider md:text-balance">

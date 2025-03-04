@@ -73,7 +73,7 @@ export default function Page({ params }: any) {
           <div className="flex items-center justify-center">
             <div className="flex flex-col gap-24">
               <div className="flex flex-col gap-8">
-                <h2 className="text-3xl font-medium tracking-wide sm:text-4xl md:text-5xl">
+                <h2 className="text-2xl font-medium sm:text-3xl md:text-4xl">
                   {service.secondary_title}
                 </h2>
                 <div className="text-lg font-medium">
@@ -83,7 +83,7 @@ export default function Page({ params }: any) {
               </div>
 
               <div className="flex flex-col gap-8">
-                <h2 className="text-2xl font-medium tracking-wide sm:text-3xl md:text-4xl">
+                <h2 className="text-xl font-medium tracking-wide sm:text-2xl md:text-3xl">
                   Vad ingår?
                 </h2>
                 <ul className="flex flex-col gap-4">

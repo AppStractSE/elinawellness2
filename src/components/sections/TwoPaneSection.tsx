@@ -36,7 +36,7 @@ const TwoPaneSection = ({
               height={1080}
               width={1920}
               className={twMerge(
-                "h-auto aspect-[1.25/1] md:aspect-auto w-full max-w-full rounded-xl object-cover object-center",
+                "aspect-[1.25/1] h-auto w-full max-w-full rounded-xl object-cover object-center md:aspect-auto",
               )}
             />
           </div>
@@ -64,9 +64,9 @@ const TwoPaneSection = ({
             rtl ? "md:order-[-1]" : "",
           )}
         >
-          <h3 className="text-xl font-semibold tracking-wide sm:text-2xl md:text-4xl">
+          <h2 className="text-2xl font-medium sm:text-3xl md:text-4xl">
             {title}
-          </h3>
+          </h2>
           <p className="whitespace-pre-line text-base md:text-lg">{text}</p>
           {button && (
             <Button

@@ -45,7 +45,7 @@ const FAQSection = ({className}: Props) => {
     <section className={className}>
       <div className="mx-auto flex max-w-screen-sm justify-center px-4 py-12 md:max-w-screen-lg md:py-24">
         <div className="flex flex-col gap-8 transition-all duration-200 ease-in-out md:gap-12 lg:gap-24">
-          <h2 className="text-center text-3xl font-medium tracking-wider sm:text-4xl md:text-5xl">
+          <h2 className="text-center text-2xl font-medium sm:text-3xl md:text-4xl">
             Vanliga frågor och svar
           </h2>
           <div className="space-y-8">
